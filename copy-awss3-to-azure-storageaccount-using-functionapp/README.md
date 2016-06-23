@@ -220,5 +220,3 @@ string containerName = "s3container";
 진행되는 과정 중에 로그로 기록된 내용 및 오류들이 [Logs] 창에 보여지게 됩니다.
 
 정상적으로 작업이 완료되면, AWS의 S3에 있던 blob 파일들이 Azure의 Storage account로 복사가 이루어지게 됩니다.
-
-불친절한 설명은 요기까지 입니다.
