@@ -8,6 +8,6 @@
     <add key="ContainerName" value="<컨테이너 명>" />
     <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=<저장소 계정 이름>;AccountKey=<저장소 계정 액세스 키>" />
 ```
-- 실행 화면
+### 실행 화면
   ![실행화면](https://github.com/jiyongseong/AzurePaaSHol/blob/master/AzureFileUploadWeb/images/azureStorageUpload.png?raw=true)
 
