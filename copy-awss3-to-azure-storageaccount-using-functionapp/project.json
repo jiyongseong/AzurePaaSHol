@@ -1,0 +1,11 @@
+{
+  "frameworks": {
+    "net46":{
+        "dependencies": {
+    "WindowsAzure.Storage": "7.0.0",
+    "AWSSDK.Core": "3.2.0-beta",
+    "AWSSDK.S3": "3.2.0-beta"
+  }
+    }
+  }
+}
