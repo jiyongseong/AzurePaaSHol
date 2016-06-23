@@ -13,3 +13,4 @@ MVC에서 그리드는 Grid.MVC를 활용: [Grid.MVC 링크](https://gridmvc.cod
 ### 실행 화면
   ![실행화면](https://github.com/jiyongseong/AzurePaaSHol/blob/master/AzureFileUploadWeb/images/azureStorageUpload.png?raw=true)
 
+만일 웹서버와 Azure 저장소 간에 보안적인 부분도 고려해야 한다면, 웹서버에서 Azure Storage로 파일 저장하는 부분에 SAS([Shared Access Signatures](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-shared-access-signature-part-1/))를 적용하는 방안을 고려하기 바람.
