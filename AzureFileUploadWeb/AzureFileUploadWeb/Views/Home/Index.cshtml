@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AzureFileUploadWeb.Models.Client>
+﻿@model IEnumerable<AzureFileUploadWeb.Models.BlobItem>
 @using GridMvc.Html
 
 @{
@@ -36,12 +36,12 @@
         <h1>Upload files to Azure Storage via ASP.NET MVC</h1>
         <div style="">
             @Html.Grid(Model).Columns(columns =>
-       {
-           columns.Add(c => c.Name).Titled("이름").SetWidth(150);
-           columns.Add(c => c.Type).Titled("형식");
-           columns.Add(c => c.Size).Titled("크기");
-           columns.Add(c => c.URL).Titled("URL").Encoded(false).RenderValueAs(c => CustomRenderingOfColumn(c.URL.ToString()).ToHtmlString());
-       }).WithPaging(10).Sortable(true)
+           {
+               columns.Add(c => c.Name).Titled("이름").SetWidth(150);
+               columns.Add(c => c.Type).Titled("형식");
+               columns.Add(c => c.Size).Titled("크기");
+               columns.Add(c => c.URL).Titled("URL").Encoded(false).RenderValueAs(c => CustomRenderingOfColumn(c.URL.ToString()).ToHtmlString());
+           }).WithPaging(10).Sortable(true)
         </div>
 
         @helper CustomRenderingOfColumn(string url)

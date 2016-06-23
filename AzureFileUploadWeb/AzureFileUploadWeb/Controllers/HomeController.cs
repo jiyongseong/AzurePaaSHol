@@ -17,8 +17,6 @@ namespace FileUploadViewer.Controllers
         string StorageConnectionString = string.Empty;
         CloudBlobContainer storageContainer;
 
-        private readonly List<Client> blobs = new List<Client>();
-
         public HomeController()
         {
             //저장소 연결 문자열 가져오기
@@ -38,9 +36,9 @@ namespace FileUploadViewer.Controllers
 
         public ActionResult Index()
         {
-            this.LoadBlobLists();
+            List<BlobItem> blobList = this.LoadBlobLists();
 
-            return View(blobs);
+            return View(blobList);
         }
 
         [HttpPost]
@@ -62,13 +60,14 @@ namespace FileUploadViewer.Controllers
             }
 
             return View("Index");
-
         } 
 
 
-        private void LoadBlobLists()
+        private List<BlobItem> LoadBlobLists()
         {
-            // Loop over items within the container and output the length and URI.
+            List<BlobItem> blobList = new List<BlobItem>();
+
+            // BLOB 목록을 가져와서 각각에 대한 정보로 List를 채움. 해당 List는 그리드로 바인딩함
             foreach (IListBlobItem item in storageContainer.ListBlobs(null, false))
             {
                 if (item.GetType() == typeof(CloudBlockBlob) || item.GetType() == typeof(CloudPageBlob))
@@ -80,18 +79,18 @@ namespace FileUploadViewer.Controllers
                     Uri blobUri = blob.Uri;
                     string blobName = blob.Name;
 
-                    blobs.Add(new Client()
+                    blobList.Add(new BlobItem()
                         { Name = blobName, Type = blobType, Size = blobSize, URL = blobUri.ToString() }
                     );
 
                 }
                 else if (item.GetType() == typeof(CloudBlobDirectory))
                 {
-                    CloudBlobDirectory directory = (CloudBlobDirectory)item;
-
-                    Console.WriteLine("Directory: {0}", directory.Uri);
+                    // 디렉토리의 경우 처리할 사항들....
                 }
             }
+
+            return blobList;
         }
     }
 }

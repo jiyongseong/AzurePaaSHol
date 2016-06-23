@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AzureFileUploadWeb.Models
 {
-    public class Client
+    public class BlobItem
     {
         public string Name { get; set; }
         public string Type { get; set; }
