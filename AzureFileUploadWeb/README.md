@@ -2,10 +2,9 @@
 
 ### 실행에 앞서 설정해야 할 사항들
 - Web.config 파일에 1)저장소 계정의 이름과 2)액세스 키와 3)대상 컨테이너 명을 입력한다.
-    
-    
-    <!-- 저장서 계정 관련 설정 부분 -->
+```
+	<!-- 저장서 계정 관련 설정 부분 -->
     <add key="ContainerName" value="<컨테이너 명>" />
     <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=<저장소 계정 이름>;AccountKey=<저장소 계정 액세스 키>" />
-
+```
 
