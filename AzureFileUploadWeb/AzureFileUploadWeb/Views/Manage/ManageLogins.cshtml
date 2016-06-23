@@ -1,0 +1,70 @@
+﻿@model AzureFileUploadWeb.Models.ManageLoginsViewModel
+@using Microsoft.Owin.Security
+@{
+    ViewBag.Title = "외부 로그인 관리";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                구성된 외부 인증 서비스가 없습니다. 외부 서비스를 통한 로그인을 지원하도록 이 ASP.NET 응용 프로그램을 설정하는 방법에 대한
+                자세한 내용은 <a href="http://go.microsoft.com/fwlink/?LinkId=313242">이 문서</a>를 참조하십시오.
+            </p>
+        </div>
+    }
+    else
+    {
+        if (Model.CurrentLogins.Count > 0)
+        {
+            <h4>등록된 로그인</h4>
+            <table class="table">
+                <tbody>
+                    @foreach (var account in Model.CurrentLogins)
+                    {
+                        <tr>
+                            <td>@account.LoginProvider</td>
+                            <td>
+                                @if (ViewBag.ShowRemoveButton)
+                                {
+                                    using (Html.BeginForm("RemoveLogin", "Manage"))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div>
+                                            @Html.Hidden("loginProvider", account.LoginProvider)
+                                            @Html.Hidden("providerKey", account.ProviderKey)
+                                            <input type="submit" class="btn btn-default" value="제거" title="계정에서 이 @account.LoginProvider 로그인 제거" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    @: &nbsp;
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        if (Model.OtherLogins.Count > 0)
+        {
+            using (Html.BeginForm("LinkLogin", "Manage"))
+            {
+                @Html.AntiForgeryToken()
+                <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in Model.OtherLogins)
+                    {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="@p.Caption 계정을 사용하여 로그인">@p.AuthenticationType</button>
+                    }
+                </p>
+                </div>
+            }
+        }
+    }
+}
