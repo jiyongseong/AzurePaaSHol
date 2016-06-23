@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>File Upload &amp; Viewer</h1>
+</div>
+
+<div class="row">
+@using (Html.BeginForm("UploadFiles", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <span>
+        <input type="file" name="myFile" multiple /> <br>
+        <input type="submit" value="Upload" />
+    </span>
+}
+</div>
