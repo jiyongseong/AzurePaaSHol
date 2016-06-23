@@ -2,6 +2,28 @@
 MVC에서 그리드는 Grid.MVC를 활용: [Grid.MVC 링크](https://gridmvc.codeplex.com/)
 
 웹 페이지를 통해서 업로드 되는 파일은 스트림 그대로 Azure Storage로 전송되도록 구현
+```
+[HttpPost]
+public ActionResult UploadFiles(HttpPostedFileBase file)
+{
+    if (Request.Files.Count > 0)
+    {
+        for (int fileNum = 0; fileNum < Request.Files.Count; fileNum++)
+        {
+            string fileName = Path.GetFileName(Request.Files[fileNum].FileName);
+            if (Request.Files[fileNum] != null && Request.Files[fileNum].ContentLength > 0)
+            {
+                // Azure Storage로 파일 업로드 수행
+                CloudBlockBlob blockBlob = storageContainer.GetBlockBlobReference(fileName);
+                blockBlob.UploadFromStream(Request.Files[fileNum].InputStream);
+            }
+        }
+        return RedirectToAction("Index");
+    }
+
+    return View("Index");
+} 
+```
 
 ### 실행에 앞서 설정해야 할 사항들
 - Web.config 파일에 1)저장소 계정의 이름과 2)액세스 키와 3)대상 컨테이너 명을 입력한다.
