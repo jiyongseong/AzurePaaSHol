@@ -41,4 +41,4 @@ Move-AzureRmResource -DestinationResourceGroupName $destResourceGroupName -Resou
 현재 시점에서 이동이 가능한 리소스 목록과 포털을 이용하는 방법은 아래의 문서를 참고하시기 바랍니다.
 
 **새 리소스 그룹 또는 구독으로 리소스 이동**
-![URL](https://azure.microsoft.com/ko-kr/documentation/articles/resource-group-move-resources/)
+![resource-group-move-resources](https://azure.microsoft.com/ko-kr/documentation/articles/resource-group-move-resources)
