@@ -12,7 +12,7 @@
 
 [새로 만들기] > 검색 창에 “Function App”(따옴표는 빼구요)이라고 입력하고..
 
-https://jiyongseong.files.wordpress.com/2016/06/image.png
+![1]https://jiyongseong.files.wordpress.com/2016/06/image.png
 
 엔터….를 누르면, 마켓플레이스가 열리면서 다음과 같이 Function App이 첫번째 줄에 나타납니다.
 
@@ -52,7 +52,7 @@ image
 
 project.json 파일을 열고, 다음의 내용을 입력하고, [Save] 버튼을 누릅니다.
 
-
+```
 {
 “frameworks”: {
 “net46”:{
@@ -64,6 +64,7 @@ project.json 파일을 열고, 다음의 내용을 입력하고, [Save] 버튼�
  }
  }
  }
+ ```
 
 image
 
@@ -77,6 +78,7 @@ image
 
 이제는 [Code] 창에서 run.csx 파일을 열고, 다음의 코드를 복사하여 넣기를 합니다. 마지막에 [Save] 버튼 누르기도 잊지 마세요.
 
+```
 using System;
  using System.IO;
  using System.Collections.Generic;
@@ -171,6 +173,7 @@ if (string.IsNullOrWhiteSpace(nextObj))
  }
  log.Info(“completed..”);
  }
+```
 
 위의 코드는 수정이 필요한 부분이 있습니다. 수정이 필요한 부분은 노란색으로 하이라이트를 해두었습니다.
 
@@ -178,10 +181,11 @@ if (string.IsNullOrWhiteSpace(nextObj))
 
 먼저, 원본인 AWS의 S3에 대한 정보를 다음과 같이 입력해주어야 합니다.
 
+```
 string awsAccessKey = “AKIAIZDK5LW3X5ZAUWZQ“;
 string awsSecretKey = “1VoqTpJ5lGSVkfaoETKAlAkU1YieW8KSScUH3t62“;
 string awsBucketName = “jyseongbucket“;
-
+```
 awsAccessKey는 Access Key ID를, awsSecretKey는 Secret Access Key를 입력해주시면 됩니다.
 
 다음의 awsBucketName은 복사하려는 원본이 되는 Bucket의 이름으로 변경을 하면 됩니다.
@@ -194,10 +198,11 @@ storageAccountName은 저장소 계정의 이름을, storageAccountKey는 저장
 
 마지막으로, containerName은 복사하려는 대상 컨테이너의 이름을 입력해주어야 합니다(주의 : 해당 컨테이너는 미리 생성되어 있어야 합니다.).
 
+```
 string storageAccountName = “usingdockerstorage“;
 string storageAccountKey = “cNhRboSgBzzkPXkllcYs9n36/RHdmp+mJzMA+1COePsiLskxUZMHx5SJFLDKaL0yvF6GEb6pMGUq0L5Evt+dlQ==“;
 string containerName = “s3container“;
-
+```
 image
 
 [Save] 버튼을 누르면, 코드가 컴파일 됩니다. 이 과정에서 컴파일에 대한 로그는 [Logs] 창에 보여지게 됩니다.
