@@ -35,7 +35,8 @@ public ActionResult UploadFiles(HttpPostedFileBase file)
 
 ### 실행에 앞서 설정해야 할 사항들
 - 여러분의 Azure Blob Storage에 파일 업로드/다운로드용 컨테이너를 하나 만들고 [액세스 형식]으로 [Blob]를 지정한다.
-	![실행화면](https://github.com/jiyongseong/AzurePaaSHol/blob/master/AzureFileUploadWeb/images/azureStorageUpload2.png?raw=true)
+
+    ![실행화면](https://github.com/jiyongseong/AzurePaaSHol/blob/master/AzureFileUploadWeb/images/azureStorageUpload2.png?raw=true)
 
 - Web.config 파일에 1)저장소 계정의 이름과 2)액세스 키와 3)대상 컨테이너 명을 입력한다.
 ```
