@@ -13,6 +13,16 @@
 - [Node.js로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-nodejs-how-to-use-blob-storage/)
 - [Python으로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-python-how-to-use-blob-storage/)
 
+
+>구현 시에 고려한 사항
+- 모든 파일은 Azure Blob Storage의 특정 컨테이너에 저장한다.
+- Azure Blob Storage의 특정 컨테이너는 읽기 전용으로 설정해야 한다.
+- 사용자가 웹 서버로 업로드하는 파일은 스트림 그대로 Azure Storage 쪽에 저장해야 한다.
+- 사용자가 파일 내역을 조회하고자 하는 경우에는 웹 서버는 파일 목록과 해당 파일로의 직접적인 하이퍼링크를 제공한다
+	- 웹 서버가 파일 다운로드를 중계하는 방식은 권장하지 않는다(메모리 낭비 및 CDN 적용 불가)
+- 사용자는 개별 파일에 대해서는 Azure Blob에 직접 접근하여 다운로드를 수행한다.
+
+
 ```
 [HttpPost]
 public ActionResult UploadFiles(HttpPostedFileBase file)
