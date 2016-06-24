@@ -1,7 +1,9 @@
 ﻿## ASP.NET MVC로 파일 업로드하면 Azure Storage로 저장하는 예제
-MVC에서 그리드는 Grid.MVC를 활용: [Grid.MVC 링크](https://gridmvc.codeplex.com/)
 
-웹 페이지를 통해서 업로드 되는 파일은 스트림 그대로 Azure Storage로 전송되도록 구현
+* MVC에서 그리드는 Grid.MVC를 활용: [Grid.MVC 링크](https://gridmvc.codeplex.com/)
+* 웹 페이지를 통해서 업로드 되는 파일은 스트림 그대로 Azure Storage로 전송되도록 구현
+* 예제 소스는 이해하기 쉽도록 동기(Sync) 메서드를 사용하여 구현하였음.
+
 ```
 [HttpPost]
 public ActionResult UploadFiles(HttpPostedFileBase file)
