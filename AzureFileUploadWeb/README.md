@@ -6,21 +6,21 @@
 * 웹 페이지를 통해서 업로드 되는 파일은 스트림 그대로 Azure Storage로 전송되도록 구현
 * 예제 소스는 이해하기 쉽도록 동기(Sync) 메서드를 사용하여 구현하였음.
 
-> 구현 시 참고할만한 문서
-- [.NET로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/)
-- [Java로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-java-how-to-use-blob-storage/)
-- [PHP로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-php-how-to-use-blobs/)
-- [Node.js로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-nodejs-how-to-use-blob-storage/)
-- [Python으로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-python-how-to-use-blob-storage/)
+> **구현 시 참고할만한 문서**
+>- [.NET로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/)
+>- [Java로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-java-how-to-use-blob-storage/)
+>- [PHP로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-php-how-to-use-blobs/)
+>- [Node.js로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-nodejs-how-to-use-blob-storage/)
+>- [Python으로 개발 시에 참고문서](https://azure.microsoft.com/en-us/documentation/articles/storage-python-how-to-use-blob-storage/)
 
 
->구현 시에 고려한 사항
-- 모든 파일은 Azure Blob Storage의 특정 컨테이너에 저장한다.
-- Azure Blob Storage의 특정 컨테이너는 읽기 전용으로 설정해야 한다.
-- 사용자가 웹 서버로 업로드하는 파일은 스트림 그대로 Azure Storage 쪽에 저장해야 한다.
-- 사용자가 파일 내역을 조회하고자 하는 경우에는 웹 서버는 파일 목록과 해당 파일로의 직접적인 하이퍼링크를 제공한다
-	- 웹 서버가 파일 다운로드를 중계하는 방식은 권장하지 않는다(메모리 낭비 및 CDN 적용 불가)
-- 사용자는 개별 파일에 대해서는 Azure Blob에 직접 접근하여 다운로드를 수행한다.
+>**구현 시 고려한 사항**
+>- 모든 파일은 Azure Blob Storage의 특정 컨테이너에 저장한다.
+>- Azure Blob Storage의 특정 컨테이너는 읽기 전용으로 설정해야 한다.
+>- 사용자가 웹 서버로 업로드하는 파일은 스트림 그대로 Azure Storage 쪽에 저장해야 한다.
+>- 사용자가 파일 내역을 조회하고자 하는 경우에는 웹 서버는 파일 목록과 해당 파일로의 직접적인 하이퍼링크를 제공한다
+>	- 웹 서버가 파일 다운로드를 중계하는 방식은 권장하지 않는다(메모리 낭비 및 CDN 적용 불가)
+>- 사용자는 개별 파일에 대해서는 Azure Blob에 직접 접근하여 다운로드를 수행한다.
 
 
 ```
@@ -53,7 +53,7 @@ public ActionResult UploadFiles(HttpPostedFileBase file)
 
 - Web.config 파일에 1)저장소 계정의 이름과 2)액세스 키와 3)대상 컨테이너 명을 입력한다.
 ```
-	<!-- 저장서 계정 관련 설정 부분 -->
+    <!-- 저장서 계정 관련 설정 부분 -->
     <add key="ContainerName" value="<컨테이너 명>" />
     <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=<저장소 계정 이름>;AccountKey=<저장소 계정 액세스 키>" />
 ```
