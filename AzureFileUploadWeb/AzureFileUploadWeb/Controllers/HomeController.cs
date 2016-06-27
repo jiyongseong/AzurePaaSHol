@@ -45,6 +45,19 @@ namespace FileUploadViewer.Controllers
         [HttpPost]
         public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files)
         {
+            this.UploadFilesToAzureStorage(files);
+            return RedirectToAction("Index");
+
+        }
+
+        /// <summary>
+        /// HTML 폼에서 업로드 된 파일드를 Azure Stoage로 업로드 하는 메서드.
+        /// Javascript에서 직접 호출가능 및 내부에서 호출가능
+        /// </summary>
+        /// <param name="files"></param>
+        [HttpPost]
+        private void UploadFilesToAzureStorage(IEnumerable<HttpPostedFileBase> files)
+        {
             foreach (var file in files)
             {
                 if (file?.ContentLength > 0)
@@ -56,9 +69,6 @@ namespace FileUploadViewer.Controllers
                     blockBlob.UploadFromStream(file.InputStream);
                 }
             }
-
-            return RedirectToAction("Index");
-
         }
 
         private List<BlobItem> LoadBlobLists()
