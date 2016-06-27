@@ -1,6 +1,10 @@
 ﻿## Azure 파일 업로드 예제
 
-* 웹 서버(IaaS, PaaS)로 파일 업로드 시, 파일을 Azure Storage로 저장하는 예제.
+[update]
+- 6월 27일 : jQuery.Form을 이용해서 업로드 하는 페이지 추가
+  - 업로드 부분만 추가, 조회 부분은 추후 업데이트 예정
+
+[설명]
 * 예제는 ASP.NET MVC로 작성됨(다른 언어 사용 시 하단의 참고문서를 참고하기 바람)
 * MVC에서 그리드는 Grid.MVC를 활용: [Grid.MVC 링크](https://gridmvc.codeplex.com/)
 * 웹 페이지를 통해서 업로드 되는 파일은 스트림 그대로 Azure Storage로 전송되도록 구현
