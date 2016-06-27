@@ -21,6 +21,7 @@
 
         @using (Html.BeginForm("UploadFiles", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
+            @Html.AntiForgeryToken()
             <table>
                 <tr>
                     <td>

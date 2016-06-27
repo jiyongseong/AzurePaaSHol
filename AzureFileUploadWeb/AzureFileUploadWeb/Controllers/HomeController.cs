@@ -43,11 +43,11 @@ namespace FileUploadViewer.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files)
         {
             this.UploadFilesToAzureStorage(files);
             return RedirectToAction("Index");
-
         }
 
         /// <summary>
@@ -56,6 +56,7 @@ namespace FileUploadViewer.Controllers
         /// </summary>
         /// <param name="files"></param>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         private void UploadFilesToAzureStorage(IEnumerable<HttpPostedFileBase> files)
         {
             foreach (var file in files)
