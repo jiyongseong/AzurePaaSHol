@@ -16,10 +16,40 @@
     <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
     <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var bar = $('.progress-bar');
+            var percent = $('.progress-bar');
+            var status = $('#status');
+
+            $('form').ajaxForm({
+                beforeSend: function () {
+                    status.empty();
+                    var percentVal = '0%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                uploadProgress: function (event, position, total, percentComplete) {
+                    var percentVal = percentComplete + '%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                success: function () {
+                    var percentVal = '100%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                complete: function (xhr) {
+                    status.html(xhr.responseText);
+                }
+            });
+        }); //$(document).ready
+    </script>
     <title>Index</title>
 </head>
 <body>
     <div style="margin:50px">
+        <p><a href="@Url.Action("Index")">기본 Form 사용</a></p>
 
         @using (Html.BeginForm("UploadFilesToAzureStorage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
@@ -37,6 +67,7 @@
             </table>
         }
 
+        <div id="status">업로드 상태 : 없음</div>
         <div class="progress progress-striped">
             <div class="progress-bar progress-bar-success">0%</div>
         </div>

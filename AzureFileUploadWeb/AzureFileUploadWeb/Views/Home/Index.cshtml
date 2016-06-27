@@ -18,6 +18,7 @@
 </head>
 <body>
     <div style="margin:50px">
+        <p><a href="@Url.Action("IndexJs")">jQuery.Form 사용</a></p>
 
         @using (Html.BeginForm("UploadFiles", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {

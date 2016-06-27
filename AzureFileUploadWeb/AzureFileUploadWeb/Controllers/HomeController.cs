@@ -64,7 +64,7 @@ namespace FileUploadViewer.Controllers
         /// <param name="files"></param>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        private void UploadFilesToAzureStorage(IEnumerable<HttpPostedFileBase> files)
+        public void UploadFilesToAzureStorage(IEnumerable<HttpPostedFileBase> files)
         {
             foreach (var file in files)
             {
