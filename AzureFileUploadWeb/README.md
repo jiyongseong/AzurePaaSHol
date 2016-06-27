@@ -23,6 +23,7 @@
 >- 사용자는 개별 파일에 대해서는 Azure Blob에 직접 접근하여 다운로드를 수행한다.
 
 
+[코드 예시]
 ```
 [HttpPost]
 public ActionResult UploadFiles(HttpPostedFileBase file)

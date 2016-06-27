@@ -3,6 +3,7 @@ using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,26 +43,23 @@ namespace FileUploadViewer.Controllers
         }
 
         [HttpPost]
-        public ActionResult UploadFiles(HttpPostedFileBase file)
+        public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files)
         {
-            if (Request.Files.Count > 0)
+            foreach (var file in files)
             {
-                for (int fileNum = 0; fileNum < Request.Files.Count; fileNum++)
+                if (file?.ContentLength > 0)
                 {
-                    string fileName = Path.GetFileName(Request.Files[fileNum].FileName);
-                    if (Request.Files[fileNum] != null && Request.Files[fileNum].ContentLength > 0)
-                    {
-                        // Azure Storage로 파일 업로드 수행
-                        CloudBlockBlob blockBlob = storageContainer.GetBlockBlobReference(fileName);
-                        blockBlob.UploadFromStream(Request.Files[fileNum].InputStream);
-                    }
+                    string fileName = Path.GetFileName(file.FileName);
+
+                    // Azure Storage로 파일 업로드 수행
+                    CloudBlockBlob blockBlob = storageContainer.GetBlockBlobReference(fileName);
+                    blockBlob.UploadFromStream(file.InputStream);
                 }
-                return RedirectToAction("Index");
             }
 
-            return View("Index");
-        } 
+            return RedirectToAction("Index");
 
+        }
 
         private List<BlobItem> LoadBlobLists()
         {

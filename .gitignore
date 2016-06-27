@@ -250,3 +250,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/AzureFileUploadWeb/AzureFileUploadWeb/Views/Home/IndexJS.cshtml
