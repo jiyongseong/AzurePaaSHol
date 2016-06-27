@@ -42,6 +42,13 @@ namespace FileUploadViewer.Controllers
             return View(blobList);
         }
 
+        public ActionResult IndexJS()
+        {
+            List<BlobItem> blobList = this.LoadBlobLists();
+
+            return View("IndexJS", blobList);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files)
