@@ -68,9 +68,8 @@ namespace FileUploadViewer.Controllers
         /// HTML 폼에서 업로드 된 파일드를 Azure Stoage로 업로드 하는 메서드.
         /// Javascript에서 직접 호출가능 및 내부에서 호출가능
         /// </summary>
-        /// <param name="files"></param>
-        [HttpPost]
-        public void UploadFilesToAzureStorage(IEnumerable<HttpPostedFileBase> files)
+        /// <param name="files">업로드된 파일들</param>
+        private void UploadFilesToAzureStorage(IEnumerable<HttpPostedFileBase> files)
         {
             foreach (var file in files)
             {
@@ -81,6 +80,28 @@ namespace FileUploadViewer.Controllers
                     // Azure Storage로 파일 업로드 수행
                     CloudBlockBlob blockBlob = storageContainer.GetBlockBlobReference(fileName);
                     blockBlob.UploadFromStream(file.InputStream);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Safari나 Chrome에서는 IEnumerable<HttpPostedFileBase>로 받을 경우 올바로 인식되지 않음
+        /// 해서 가장 기본적인 유형의 메서드를 따로 정의.. 
+        /// </summary>
+        [HttpPost]
+        public void UploadFilesFromChrome()
+        {
+            if (Request.Files.Count > 0)
+            {
+                for (int num = 0; num < Request.Files.Count; num++)
+                {
+                    string fileName = Path.GetFileName(Request.Files[num].FileName);
+                    if (Request.Files[num] != null && Request.Files[num].ContentLength > 0)
+                    {
+                        // Azure Storage로 파일 업로드 수행
+                        CloudBlockBlob blockBlob = storageContainer.GetBlockBlobReference(fileName);
+                        blockBlob.UploadFromStream(Request.Files[num].InputStream);
+                    }
                 }
             }
         }
