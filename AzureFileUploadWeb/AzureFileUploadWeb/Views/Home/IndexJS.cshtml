@@ -1,28 +1,64 @@
-﻿@model IEnumerable<AzureFileUploadWeb.Models.BlobItem>
-@using GridMvc.Html
-
-@{
+﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
-    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <link href="/Content/Gridmvc.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
+            // 상태바를 그리기 위한 개체 참조들
             var bar = $('.progress-bar');
             var percent = $('.progress-bar');
             var status = $('#status');
 
+            //#region Knockout의 ViewModel 정의부
+            // Blob 모델 클래스
+            function BlobItem(name, type, size, url) {
+                var self = this;
+                self.name = name;
+                self.type = type;
+                self.size = size;
+                self.url = url;
+            }
+
+            // KO의 ViewModel 정의
+            function ViewModel() {
+                var self = this;
+
+                // 배열 속성
+                self.blobList = ko.observableArray();
+
+                // 메서드 정의
+                self.addBlob = function (blob) {
+                    self.blobList.push(new BlobItem(blob.Name, blob.Type, blob.Size, blob.URL));
+                }
+                self.AddBlobs = function (blobs) {
+                    self.removeAll();
+                    for (var item in blobs) {
+                        self.addBlob(blobs[item]);
+                    }
+                }
+                self.removeAll = function () {
+                    self.blobList.removeAll();
+                }
+            };
+            // 뷰모델을 적용
+            //#endregion
+
+            var vm = new ViewModel();
+            ko.applyBindings(vm);
+
+            // Form에 비동기 ajax 파일 업로드 기능 연결
             $('form').ajaxForm({
+                clearForm: true, 
                 beforeSend: function () {
                     status.empty();
                     var percentVal = '0%';
@@ -41,31 +77,49 @@
                 },
                 complete: function (xhr) {
                     status.html(xhr.responseText);
+                    //업로드 성공시 파일 목록 갱신
+                    loadBlobList();
                 }
             });
+
+            // Blob 목록 읽어오는 ajax 메서드 정의
+            function loadBlobList() {
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetBlobList",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        vm.AddBlobs(data);
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            };
+
+            loadBlobList();
         }); //$(document).ready
     </script>
     <title>Index</title>
 </head>
 <body>
-    <div style="margin:50px">
-        <p><a href="@Url.Action("Index")">기본 Form 사용</a></p>
+    <div style="margin:10px">
+        <p><a href="Home/Index">기본 Form 사용</a></p>
 
-        @using (Html.BeginForm("UploadFilesToAzureStorage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            @Html.AntiForgeryToken()
+        <form id="imageform" method="post" enctype="multipart/form-data" action="/Home/UploadFilesToAzureStorage">
             <table>
                 <tr>
                     <td>
-                        <input type="file" name="files" multiple />
-                        <input type="file" name="files" multiple />
+                        <input type="file" name="files" />
+                        <input type="file" name="files" />
                     </td>
                     <td>
                         <input type="submit" value="Upload" />
                     </td>
                 </tr>
             </table>
-        }
+        </form>
 
         <div id="status">업로드 상태 : 없음</div>
         <div class="progress progress-striped">
@@ -73,24 +127,30 @@
         </div>
 
         <h1>Upload files to Azure Storage via ASP.NET MVC</h1>
-        <div style="">
-            @Html.Grid(Model).Columns(columns =>
-           {
-               columns.Add(c => c.Name).Titled("이름").SetWidth(150);
-               columns.Add(c => c.Type).Titled("형식");
-               columns.Add(c => c.Size).Titled("크기");
-               columns.Add(c => c.URL).Titled("URL").Encoded(false).RenderValueAs(c => CustomRenderingOfColumn(c.URL.ToString()).ToHtmlString());
-           }).WithPaging(10).Sortable(true)
+
+
+        <div class="grid-wrap">
+            <table class="table table-striped grid-table">
+                <thead>
+                    <tr>
+                        <th class="grid-header" style="width:150px;"><div class="grid-header-title"><a href="?grid-column=Name&amp;grid-dir=0">이름</a></div></th>
+                        <th class="grid-header"><div class="grid-header-title"><a href="?grid-column=Type&amp;grid-dir=0">형식</a></div></th>
+                        <th class="grid-header"><div class="grid-header-title"><a href="?grid-column=Size&amp;grid-dir=0">크기</a></div></th>
+                        <th class="grid-header"><div class="grid-header-title"><a href="?grid-column=URL&amp;grid-dir=0">URL</a></div></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: blobList">
+                    <tr class="grid-row ">
+                        <td class="grid-cell" data-bind="text:name"></td>
+                        <td class="grid-cell" data-bind="text:type"></td>
+                        <td class="grid-cell" data-bind="text:size"></td>
+                        <td class="grid-cell">
+                            <a data-bind="attr: { href: url}, text: url"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        @helper CustomRenderingOfColumn(string url)
-        {
-        <a href="@url">@url</a>
-}
-
-
-
-
     </div>
 </body>
 
