@@ -20,12 +20,13 @@ namespace FileUploadViewer.Controllers
 
         public HomeController()
         {
-            //저장소 연결 문자열 가져오기
+            // 저장소 연결 문자열 가져오기
             StorageConnectionString = CloudConfigurationManager.GetSetting("StorageConnectionString");
 
             containerName = CloudConfigurationManager.GetSetting("ContainerName");
 
             // 저장소 계정 가져오기
+            // 여기서 runtime 에러나면 Web.config에 가서 저장소 계정 액세스 키를 설정하세요
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(StorageConnectionString);
 
             // blob 클라이언트 생성.
@@ -47,6 +48,12 @@ namespace FileUploadViewer.Controllers
             List<BlobItem> blobList = this.LoadBlobLists();
 
             return View("IndexJS", blobList);
+        }
+
+        [HttpGet]
+        public JsonResult GetBlobList()
+        {
+            return Json(this.LoadBlobLists(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
