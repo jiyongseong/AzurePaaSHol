@@ -1,7 +1,7 @@
 ﻿## Azure 파일 업로드 예제
 
 [update]
-- 6월 30일 : Safari와 Chrome에서 jQuery.Form 업로드 안되던 버그 해결
+- 6월 30일 : FireFox와 Chrome에서 jQuery.Form 업로드 안되던 버그 해결
 - 6월 30일 : KnockoutJs를 활용한 MVVM 기능 추가, 비동기 조회 및 바인딩 
 - 6월 27일 : jQuery.Form을 이용해서 업로드 하는 페이지 추가
   - 업로드 부분만 추가, 조회 부분은 추후 업데이트 예정

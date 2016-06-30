@@ -85,11 +85,12 @@ namespace FileUploadViewer.Controllers
         }
 
         /// <summary>
-        /// Safari나 Chrome에서는 IEnumerable<HttpPostedFileBase>로 받을 경우 올바로 인식되지 않음
-        /// 해서 가장 기본적인 유형의 메서드를 따로 정의.. 
+        /// FireFox나 Chrome에서는 IEnumerable<HttpPostedFileBase>로 받을 경우 올바로 인식되지 않음
+        /// 2개의 파일이 올라오면 올바로 인식되나 1개만 업로드 된 경우에는 null로 인식됨.
+        /// 해서 가장 기본적인 유형의 메서드를 따로 정의..  최적화는 여러분의 손에!
         /// </summary>
         [HttpPost]
-        public void UploadFilesFromChrome()
+        public void UploadFilesFromChrome(IEnumerable<HttpPostedFileBase> files)
         {
             if (Request.Files.Count > 0)
             {
