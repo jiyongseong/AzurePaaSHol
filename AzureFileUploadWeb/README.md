@@ -1,11 +1,15 @@
 ﻿## Azure 파일 업로드 예제
 
 [update]
+- 6월 30일 : Safari와 Chrome에서 jQuery.Form 업로드 안되던 버그 해결
+- 6월 30일 : KnockoutJs를 활용한 MVVM 기능 추가, 비동기 조회 및 바인딩 
 - 6월 27일 : jQuery.Form을 이용해서 업로드 하는 페이지 추가
   - 업로드 부분만 추가, 조회 부분은 추후 업데이트 예정
 
 [설명]
-* 예제는 ASP.NET MVC로 작성됨(다른 언어 사용 시 하단의 참고문서를 참고하기 바람)
+* 기본 예제는 ASP.NET MVC로 작성됨(다른 언어 사용 시 하단의 참고문서를 참고하기 바람)
+* 추가 예제는 jQuery.Form을 활용한 HTML/Javascript 파일 업로드 페이지로 작성
+  * 서버 측은 Java나 Php 등으로 구현해도 무방함(예에서는 서버로 ASP.NET을 활용함)
 * MVC에서 그리드는 Grid.MVC를 활용: [Grid.MVC 링크](https://gridmvc.codeplex.com/)
 * 웹 페이지를 통해서 업로드 되는 파일은 스트림 그대로 Azure Storage로 전송되도록 구현
 * 예제 소스는 이해하기 쉽도록 동기(Sync) 메서드를 사용하여 구현하였음.
