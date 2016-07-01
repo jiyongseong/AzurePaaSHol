@@ -53,7 +53,7 @@
 
 project.json 파일을 열고, 다음의 내용을 입력하고, [Save] 버튼을 누릅니다.
 
-```
+```JSON
 {
   "frameworks": {
     "net46":{
@@ -79,7 +79,7 @@ Copy & Paste를 잘 하셨다면, 다음과 같은 로그가 마지막에 보여
 
 이제는 [Code] 창에서 run.csx 파일을 열고, 다음의 코드를 복사하여 넣기를 합니다. 마지막에 [Save] 버튼 누르기도 잊지 마세요.
 
-```
+```C#
 using System;
 using System.IO;
 using System.Collections.Generic;

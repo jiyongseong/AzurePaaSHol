@@ -6,7 +6,7 @@
 
 아래의 코드는 특정 Resource Group에 있는 모든 리소스들을 다른 Resource Group으로 이동시키는 작업을 수행합니다.
 
-```
+```PowerShell
 Login-AzureRmAccount #Azure로 로그인
 
 $subscriptionName = “your subscription name” #작업하려는 구독(subscription)의 이름
@@ -23,7 +23,7 @@ Move-AzureRmResource -DestinationResourceGroupName $destResourceGroupName -Resou
 ```
 특정 리소스만 이동시키는 경우에는 다음의 cmdlet을 사용하시면 되겠습니다.
 
-```
+```PowerShell
 Login-AzureRmAccount #Azure로 로그인
 
 $subscriptionName = “your subscription name” #작업하려는 구독(subscription)의 이름
