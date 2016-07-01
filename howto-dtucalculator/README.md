@@ -31,7 +31,7 @@ Azure SQL Database DTU Calculator에서 제공하는 스크립트는 [요기](ht
 해당 스크립트의 단점은 __"server이름\인스턴스"__ 와 같이, 명명된 인스턴스에 대한 부분은 PowerShell cmdlets을 수정해야만 실행할 수 있습니다.
 이를 수정한 코드를 작성해보았는데요.. 아래와 같습니다.
 
-\`
+```PowerShell
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force
 
@@ -80,7 +80,7 @@ $logBytes)
 Get-Counter -Counter $counters -SampleInterval 1 -MaxSamples 3600 | 
     Export-Counter -FileFormat csv -Path "C:\sql-perfmon-log.csv" -Force
 
-\`
+```
 
 위의 내용을 사이트에서 다운로드 하신 sql-perfmon.ps1 파일에 덮어 쓰거나, 다른 이름으로 ps1 파일로 저장하고 관리자 권한으로 실행합니다.
 
