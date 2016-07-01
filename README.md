@@ -2,6 +2,9 @@
 
 Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 대한 Hands on Lab을 제공합니다.
 
+### Azure 파일 업로드 예제
+
+[보러 가기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb)
 
 ### Azure Function App을 이용하여 AWS S3 파일을 Storage account로 복사하기
 
