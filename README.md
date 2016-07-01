@@ -19,5 +19,8 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
 - Azure PowerShell을 이용하여, 특정 Resource Group에 있는 모든 리소스들을 다른 Resource Group으로 이동시키는 방법을 설명하고 있습니다.
 
+### [Azure SQL Database DTU Calculator 사용법](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
+
+- Azure SQL Database DTU Calculator 사용법과 흔히 겪게 되는 PowerShell 스크립트 오류 수정
 
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
