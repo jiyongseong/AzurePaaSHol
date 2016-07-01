@@ -106,4 +106,4 @@ Get-Counter -Counter $counters -SampleInterval 1 -MaxSamples 3600 |
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/howto-dtucalculator5.jpg)
 
-테스트해보고 싶은 분들을 위해서, 예제 성능 로그 파일([sql-perfmon-log.csv](https://github.com/jiyongseong/AzurePaaSHol/blob/master/howto-dtucalculator/sql-perfmon-log.csv))을 같이 올려 두었습니다.
+테스트해보고 싶은 분들을 위해서, 예제 성능 로그 파일([sql-perfmon-log.zip](https://github.com/jiyongseong/AzurePaaSHol/blob/master/howto-dtucalculator/sql-perfmon-log.zip))을 같이 올려 두었습니다.
