@@ -31,6 +31,9 @@ Azure SQL Database에서 확장 이벤트를 구성하는 방법은 다음과 �
 
 PowerShell 명령 창(powershell.exe) 또는 PowerShell ISE(powershell_ise.exe)를 열고, Azure로 로그인 합니다.
 
+소스 코드 : [creating_storage_account_and_container.ps1](https://github.com/jiyongseong/AzurePaaSHol/blob/master/capturing_xevent_in_azure_sql/creating_storage_account_and_container.ps1)
+
+
 ```PowerShell
 Login-AzureRmAccount
 ```
@@ -128,6 +131,10 @@ SQL Server Management Studio(SSMS)를 열고, 확장 이벤트를 이용하여 d
 
 먼저 MASTER KEY ENCRYPTION을 생성할 때 사용할 비밀번호를 생성합니다.
 
+
+소스 코드 : [creating_xevent.sql](https://github.com/jiyongseong/AzurePaaSHol/blob/master/capturing_xevent_in_azure_sql/creating_xevent.sql)
+
+
 ```SQL
 DECLARE @pwd uniqueidentifier = newid();
 SELECT @pwd
@@ -208,6 +215,8 @@ GO
 
 SSMS에서 다음의 쿼리를 이용하여 간단한 테스트 테이블을 생성합니다.
 
+소스 코드 : [creating_table_for_deadlock.sql](https://github.com/jiyongseong/AzurePaaSHol/blob/master/capturing_xevent_in_azure_sql/creating_table_for_deadlock.sql)
+
 ```SQL
 CREATE TABLE DeadlockTest (id INT)
 INSERT INTO DeadlockTest
@@ -219,6 +228,9 @@ GO
 새로운 두 개의 쿼리 창을 열고, 아래의 쿼리들을 복사하여 붙여넣기 합니다.
 
 첫 번째 쿼리 창에는 다음의 쿼리를,
+
+소스 코드 : [deadlock_query1.sql](https://github.com/jiyongseong/AzurePaaSHol/blob/master/capturing_xevent_in_azure_sql/deadlock_query1.sql)
+
 
 ```SQL
 --session 1
@@ -238,6 +250,9 @@ ROLLBACK
 ```
 
 두 번째 쿼리 창에는 다음의 쿼리를 붙여 넣기 합니다.
+
+소스 코드 : [deadlock_query2.sql](https://github.com/jiyongseong/AzurePaaSHol/blob/master/capturing_xevent_in_azure_sql/deadlock_query2.sql)
+
 
 ```SQL
 --session 2
@@ -269,6 +284,8 @@ GO
 이제 확장 이벤트에서 정상적으로 daedlock 정보가 수집되었는지 확인해보겠습니다.
 
 다음의 쿼리를 실행합니다.
+
+소스 코드 : [quering_daeadlock_info.sql](https://github.com/jiyongseong/AzurePaaSHol/blob/master/capturing_xevent_in_azure_sql/quering_daeadlock_info.sql)
 
 ```SQL
 SELECT 

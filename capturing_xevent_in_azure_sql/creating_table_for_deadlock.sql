@@ -1,0 +1,5 @@
+CREATE TABLE DeadlockTest ( id INT)
+INSERT INTO DeadlockTest
+SELECT 1 UNION ALL
+SELECT 2
+GO
