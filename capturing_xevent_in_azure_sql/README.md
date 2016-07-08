@@ -18,14 +18,14 @@ Azure SQL Database에서도 SQL Server와 마찬가지로, 확장 이벤트(Exte
 
 Azure SQL Database에서 확장 이벤트를 구성하는 방법은 다음과 같은 순서에 따라서 이루어집니다.
 
-1) 이벤트 정보를 저장할 Storage Account 생성
-   1) Storage Account 생성
-   2) 이벤트 파일을 저장할 container 생성
-   3) SAS 정책 생성
-2) Azure SQL Database에 확장 이벤트 정의
-   1) CREDENTIAL 생성
-   2) 확장 이벤트 정의
-   3) 확장 이벤트 시작
+1) 이벤트 정보를 저장할 Storage Account 생성  
+   1) Storage Account 생성  
+   2) 이벤트 파일을 저장할 container 생성  
+   3) SAS 정책 생성  
+2) Azure SQL Database에 확장 이벤트 정의  
+   1) CREDENTIAL 생성  
+   2) 확장 이벤트 정의  
+   3) 확장 이벤트 시작  
 
 ### Storage Account 생성
 
