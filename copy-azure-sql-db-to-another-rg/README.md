@@ -26,9 +26,9 @@ $dbName = "source Azure SQL Database name"
 $svcObjName = "tier"
 ```
 
- ```$rgName```은 원본 데이터베이스가 위치하고 있는 리소스 그룹을,
- ```$svrName```은 원본 데이터베이스의 Azure SQL Database 서버 이름을,
- ```$dbName```은 원본 데이터베이스의 이름을,
+ ```$rgName```은 원본 데이터베이스가 위치하고 있는 리소스 그룹을,  
+ ```$svrName```은 원본 데이터베이스의 Azure SQL Database 서버 이름을,  
+ ```$dbName```은 원본 데이터베이스의 이름을,  
  ```$svcObjName```는 데이터베이스의 가격 계층을 입력하면 됩니다
 
  가격 계층은 다음과 같이 기술할 수 있습니다.
@@ -66,8 +66,8 @@ $destSvrName = "destination Azure SQL Database Server name"
 $destDBName = "destination Azure SQL Database name"
  ```
 
- ```$destRgName```은 복사의 대상이 되는 리소스 그룹을,
- ```$destSvrName```은 복사의 대상이 되는 Azure SQL Database 서버 이름을,
+ ```$destRgName```은 복사의 대상이 되는 리소스 그룹을,  
+ ```$destSvrName```은 복사의 대상이 되는 Azure SQL Database 서버 이름을,  
 ```$destDBName```은 데이터베이스의 이름을 작성하시면 됩니다.
 
 예를 들면, 다음과 같이 작성이 가능합니다.
