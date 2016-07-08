@@ -14,7 +14,7 @@
 
 때문에, DTU 결정에 도움을 주기 위해서 [Azure SQL Database DTU Calculator](http://dtucalculator.azurewebsites.net/)라는 3rd party 도구가 만들어졌습니다.
 
-__주의 - Azure SQL Database DTU Calculator는 Microsoft에서 제공하는 도구가 아닙니다.___
+__주의 - Azure SQL Database DTU Calculator는 Microsoft에서 제공하는 도구가 아닙니다.__
 
 Azure SQL Database DTU Calculator는 크게 다음과 같이 두 단계에 걸쳐서 실행이 됩니다.
 1. 온-프레미스의 리소스 사용량 측정

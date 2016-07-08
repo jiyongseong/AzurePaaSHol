@@ -8,7 +8,7 @@
 
 주의 : 저는 개발자가 아닙니다. 따라서, 이번 포스트에서는 이렇게 가능하다 정도의 수준에서 작성된 코드를 설명하고 있습니다. 따라서 완성된 방식으로 동작하는 코드에 대해서는 전문 개발자와 상담하십쇼.
 
-먼저, Azure 포털(http://portal.azure.com)을 열고..
+먼저, Azure 포털(<http://portal.azure.com>)을 열고..
 
 [새로 만들기] > 검색 창에 “Function App”(따옴표는 빼구요)이라고 입력하고..
 
@@ -187,17 +187,17 @@ string awsAccessKey = "AKIAIZDK5LW3X5ZAUWZQ";
 string awsSecretKey = "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";
 string awsBucketName = "jyseongbucket";
 ```
-awsAccessKey는 Access Key ID를, awsSecretKey는 Secret Access Key를 입력해주시면 됩니다.
+`awsAccessKey`는 Access Key ID를, `awsSecretKey`는 Secret Access Key를 입력해주시면 됩니다.
 
-다음의 awsBucketName은 복사하려는 원본이 되는 Bucket의 이름으로 변경을 하면 됩니다.
+다음의 `awsBucketName`은 복사하려는 원본이 되는 Bucket의 이름으로 변경을 하면 됩니다.
 
 위에 사용된 Access Key ID와 Secret Access  Key는 글을 올리는 시점에서는 이미 삭제하였습니다. 물론 Bucket도 삭제되었습니다. 
 
 다음은, 복사의 대상이 되는 Azure Storage Account의 정보를 입력해주어야 합니다.
 
-storageAccountName은 저장소 계정의 이름을, storageAccountKey는 저장소 계정의 액세스 키(1번 또는 2번 중에 하나)를 입력해주어야 합니다.
+`storageAccountName`은 저장소 계정의 이름을, `storageAccountKey`는 저장소 계정의 액세스 키(1번 또는 2번 중에 하나)를 입력해주어야 합니다.
 
-마지막으로, containerName은 복사하려는 대상 컨테이너의 이름을 입력해주어야 합니다(주의 : 해당 컨테이너는 미리 생성되어 있어야 합니다.).
+마지막으로, `containerName`은 복사하려는 대상 컨테이너의 이름을 입력해주어야 합니다(주의 : 해당 컨테이너는 미리 생성되어 있어야 합니다.).
 
 ```C#
 string storageAccountName = "usingdockerstorage";

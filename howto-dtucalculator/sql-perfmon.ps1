@@ -21,7 +21,6 @@ else
     $instance = Read-Host -Prompt "Please select SQL Server instance to collect"
 }
 
-
 if ($instance -eq "MSSQLSERVER")
 {
     $server = "SQLServer"
