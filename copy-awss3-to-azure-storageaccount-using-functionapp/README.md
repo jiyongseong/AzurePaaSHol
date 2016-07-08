@@ -182,7 +182,7 @@ private static void CopyToAzure(TraceWriter log)
 
 먼저, 원본인 AWS의 S3에 대한 정보를 다음과 같이 입력해주어야 합니다.
 
-```
+```C#
 string awsAccessKey = "AKIAIZDK5LW3X5ZAUWZQ";
 string awsSecretKey = "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";
 string awsBucketName = "jyseongbucket";
@@ -199,7 +199,7 @@ storageAccountName은 저장소 계정의 이름을, storageAccountKey는 저장
 
 마지막으로, containerName은 복사하려는 대상 컨테이너의 이름을 입력해주어야 합니다(주의 : 해당 컨테이너는 미리 생성되어 있어야 합니다.).
 
-```
+```C#
 string storageAccountName = "usingdockerstorage";
 string storageAccountKey = "cNhRboSgBzzkPXkllcYs9n36/RHdmp+mJzMA+1COePsiLskxUZMHx5SJFLDKaL0yvF6GEb6pMGUq0L5Evt+dlQ==";
 string containerName = "s3container";

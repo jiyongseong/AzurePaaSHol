@@ -15,12 +15,18 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
 - Azure의 App service 중에 하나인, Function app을 이용하여 AWS S3에 있는 파일들을 Azure의 Storage account로 복사하는 방법을 설명하고 있습니다.
 
-### [Azure Resource Group 간에 Resource 옮기기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/moving-resources-between-azure-resource-groups)
+### [Azure Resource Group 간에 Resource 옮기기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/moving-resources-between-azure-resource-groups)
 
 - Azure PowerShell을 이용하여, 특정 Resource Group에 있는 모든 리소스들을 다른 Resource Group으로 이동시키는 방법을 설명하고 있습니다.
 
 ### [Azure SQL Database DTU Calculator 사용법](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
 
 - Azure SQL Database DTU Calculator 사용법과 흔히 겪게 되는 PowerShell 스크립트 오류 수정
+
+### [Azure SQL Database 복사하기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/copy-azure-sql-db-to-another-rg)
+
+- Azure SQL Database의 데이터베이스를 같은 리소스 그룹 또는 다른 리소스 그룹으로 복사하는 방법에 대해서 설명합니다.
+- 구현은 PowerShell을 이용하여 설명하고 있습니다.
+
 
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
