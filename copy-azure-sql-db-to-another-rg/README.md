@@ -45,11 +45,11 @@ $svcObjName = "tier"
  - 'P6'
  - 'P11' 
 
- 서비스 계층에 대한 자세한 정보는 다음의 링크를 확인하시기 바랍니다.
+서비스 계층에 대한 자세한 정보는 다음의 링크를 확인하시기 바랍니다.
 
- [SQL 데이터베이스 옵션 및 성능: 각 서비스 계층에서 사용할 수 있는 것 이해](https://azure.microsoft.com/ko-kr/documentation/articles/sql-database-service-tiers/)
+[SQL 데이터베이스 옵션 및 성능: 각 서비스 계층에서 사용할 수 있는 것 이해](https://azure.microsoft.com/ko-kr/documentation/articles/sql-database-service-tiers/)
 
- 예를 들면, 다음과 같이 작성이 될 수 있습니다.
+예를 들면, 다음과 같이 작성이 될 수 있습니다.
 
  ```PowerShell
 $rgName = "dataplatform-production-eastasia"
