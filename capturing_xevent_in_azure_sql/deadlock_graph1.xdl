@@ -1,0 +1,71 @@
+﻿<deadlock>
+  <victim-list>
+    <victimProcess id="process63c6983c28" />
+  </victim-list>
+  <process-list>
+    <process id="process63c6983c28" taskpriority="0" logused="276" waitresource="RID: 6:1:1760:1" waittime="6129" ownerId="353714" transactionname="user_transaction" lasttranstarted="2016-07-08T06:08:27.150" XDES="0x63c0d20408" lockMode="U" schedulerid="14" kpid="6800" status="suspended" spid="61" sbid="0" ecid="0" priority="0" trancount="2" lastbatchstarted="2016-07-08T06:08:27.150" lastbatchcompleted="2016-07-08T06:08:27.060" lastattention="1900-01-01T00:00:00.060" clientapp="Microsoft SQL Server Management Studio - Query" hostname="KRJYSEONG03" hostpid="8792" loginname="labuser" isolationlevel="read committed (2)" xactid="353714" currentdb="6" lockTimeout="4294967295" clientoption1="671221856" clientoption2="390200">
+      <executionStack>
+        <frame procname="unknown" line="4" stmtstart="38" stmtend="136" sqlhandle="0x02000000cfffbd23f0188a19214dcccad9707be50a4889000000000000000000000000000000000000000000">
+unknown    </frame>
+        <frame procname="unknown" line="4" stmtstart="56" stmtend="152" sqlhandle="0x020000005a307b07f54043e5cd36e999a8bd436934a1ac0c0000000000000000000000000000000000000000">
+unknown    </frame>
+      </executionStack>
+      <inputbuf>
+--session 2
+BEGIN TRAN
+
+	UPDATE DeadlockTest 
+	SET id = 11
+	WHERE id = 1
+
+	WAITFOR DELAY '00:00:05'
+
+	UPDATE DeadlockTest 
+	SET id = 12
+	WHERE id = 2
+ROLLBACK
+   </inputbuf>
+    </process>
+    <process id="process63c6983088" taskpriority="0" logused="276" waitresource="RID: 6:1:1760:0" waittime="2016" ownerId="353637" transactionname="user_transaction" lasttranstarted="2016-07-08T06:08:26.260" XDES="0x63c0d00408" lockMode="U" schedulerid="14" kpid="72052" status="suspended" spid="62" sbid="0" ecid="0" priority="0" trancount="2" lastbatchstarted="2016-07-08T06:08:26.260" lastbatchcompleted="2016-07-08T06:08:26.170" lastattention="1900-01-01T00:00:00.170" clientapp="Microsoft SQL Server Management Studio - Query" hostname="KRJYSEONG03" hostpid="8792" loginname="labuser" isolationlevel="read committed (2)" xactid="353637" currentdb="6" lockTimeout="4294967295" clientoption1="671221856" clientoption2="390200">
+      <executionStack>
+        <frame procname="unknown" line="10" stmtstart="38" stmtend="136" sqlhandle="0x02000000cfffbd23f0188a19214dcccad9707be50a4889000000000000000000000000000000000000000000">
+unknown    </frame>
+        <frame procname="unknown" line="10" stmtstart="230" stmtend="326" sqlhandle="0x02000000d5e8a60f44cf6f0283b125dc3cb93b5f72d167e50000000000000000000000000000000000000000">
+unknown    </frame>
+      </executionStack>
+      <inputbuf>
+--session 1
+BEGIN TRAN
+
+	UPDATE DeadlockTest 
+	SET id = 12
+	WHERE id = 2
+	   
+	WAITFOR DELAY '00:00:05'
+
+	UPDATE DeadlockTest 
+	SET id = 11
+	WHERE id = 1
+
+ROLLBACK   </inputbuf>
+    </process>
+  </process-list>
+  <resource-list>
+    <ridlock fileid="1" pageid="1760" dbid="6" objectname="bff1fbae-9d99-4369-8191-f1aee507d782.dbo.DeadlockTest" id="lock63c13fb200" mode="X" associatedObjectId="72057594041794560">
+      <owner-list>
+        <owner id="process63c6983088" mode="X" />
+      </owner-list>
+      <waiter-list>
+        <waiter id="process63c6983c28" mode="U" requestType="wait" />
+      </waiter-list>
+    </ridlock>
+    <ridlock fileid="1" pageid="1760" dbid="6" objectname="bff1fbae-9d99-4369-8191-f1aee507d782.dbo.DeadlockTest" id="lock63d39f4d80" mode="X" associatedObjectId="72057594041794560">
+      <owner-list>
+        <owner id="process63c6983c28" mode="X" />
+      </owner-list>
+      <waiter-list>
+        <waiter id="process63c6983088" mode="U" requestType="wait" />
+      </waiter-list>
+    </ridlock>
+  </resource-list>
+</deadlock>

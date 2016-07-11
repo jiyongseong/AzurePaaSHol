@@ -22,6 +22,7 @@ Azure SQL Database에서 확장 이벤트를 구성하는 방법은 다음과 �
   - Storage Account 생성  
   - 이벤트 파일을 저장할 container 생성  
   - SAS 정책 생성  
+ 
 2) Azure SQL Database에 확장 이벤트 정의  
   - CREDENTIAL 생성  
   - 확장 이벤트 정의  
