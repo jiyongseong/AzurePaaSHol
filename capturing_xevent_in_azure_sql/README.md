@@ -1,5 +1,11 @@
 # Extended Event를 이용하여 Azure SQL Database에서 발생된 Deadlock 정보 확인하기
 
+아래의 예제를 실행하기 위해서는 Azure PowerShell과 SQL Server Management Studio가 필요합니다.
+
+최신의 Azure PowerShell은 [여기](https://msdn.microsoft.com/en-us/library/mt238290.aspx)에서 다운로드가 가능하며,
+
+SQL Server Mangement Studio 2016 버전은 [여기](https://msdn.microsoft.com/en-us/library/mt238290.aspx)에서 다운로드 하실 수 있습니다. > 한글 페이지로 열리는 경우, 영문 페이지로 전환하셔서 확인하시기 바랍니다.
+
 Azure SQL Database에서는 ```sys.event_log```라는 System DMV를 통하여 데이터베이스 연결과 연결 실패, 교착 상태 및 조정 이벤트 정보들을 확인할 수 있습니다.
 
 예를 들어, Deadlock에 대한 정보는 다음과 같은 쿼리를 이용하여 확인이 가능합니다.
