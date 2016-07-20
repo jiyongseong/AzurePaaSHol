@@ -4,3 +4,5 @@
 
 앞으로, Azure 문서 중에서 C#이나 Java와 같이 다른 언어로 작성된 코드들을 VB.NET으로 작성할 예정입니다.
 
+- [.NET을 사용하여 Azure Blob 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-blobs/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-dotnet-how-to-use-blobs)
+- [Blob 스냅숏 만들기](https://azure.microsoft.com/ko-kr/documentation/articles/storage-blob-snapshots/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-blob-snapshots)
