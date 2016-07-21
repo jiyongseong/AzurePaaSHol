@@ -177,40 +177,38 @@ End Function
 
 ## 추가 Blob에 쓰기
 ```vbnet
-        ''Retrieve storage account from connection string.
-        Dim storageAccount As CloudStorageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"))
+''Retrieve storage account from connection string.
+Dim storageAccount As CloudStorageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"))
 
-        ''Create the blob client.
-        Dim blobClient As CloudBlobClient = storageAccount.CreateCloudBlobClient()
+''Create the blob client.
+Dim blobClient As CloudBlobClient = storageAccount.CreateCloudBlobClient()
 
-        ''Retrieve a reference to a container.
-        Dim container As CloudBlobContainer = blobClient.GetContainerReference("my-append-blobs")
+''Retrieve a reference to a container.
+Dim container As CloudBlobContainer = blobClient.GetContainerReference("my-append-blobs")
 
-        ''Create the container if it doesn't already exist.
-        container.CreateIfNotExists()
+''Create the container if it doesn't already exist.
+container.CreateIfNotExists()
 
-        ''Get a reference to an append blob.
-        Dim appendBlob As CloudAppendBlob = container.GetAppendBlobReference("append-blob.log")
+''Get a reference to an append blob.
+Dim appendBlob As CloudAppendBlob = container.GetAppendBlobReference("append-blob.log")
 
-        ''Create the append blob. Note that if the blob already exists, the CreateOrReplace() method will overwrite it.
-        ''You can check whether the blob exists to avoid overwriting it by using CloudAppendBlob.Exists().
-        appendBlob.CreateOrReplace()
+''Create the append blob. Note that if the blob already exists, the CreateOrReplace() method will overwrite it.
+''You can check whether the blob exists to avoid overwriting it by using CloudAppendBlob.Exists().
+appendBlob.CreateOrReplace()
 
-        Dim numBlocks As Integer = 10
+Dim numBlocks As Integer = 10
 
-        ''Generate an array of random bytes.
-        Dim rnd As New Random
-        Dim bytes(numBlocks) As Byte
-        rnd.NextBytes(bytes)
+''Generate an array of random bytes.
+Dim rnd As New Random
+Dim bytes(numBlocks) As Byte
+rnd.NextBytes(bytes)
 
-        ''Simulate a logging operation by writing text data and byte data to the end of the append blob.
-        For i As Integer = 0 To (numBlocks - 1) Step 1
-            appendBlob.AppendText(String.Format("Timestamp: {0:u} \tLog Entry: {1}{2}", DateTime.UtcNow, bytes(i), Environment.NewLine))
-        Next
+''Simulate a logging operation by writing text data and byte data to the end of the append blob.
+For i As Integer = 0 To (numBlocks - 1) Step 1
+    appendBlob.AppendText(String.Format("Timestamp: {0:u} \tLog Entry: {1}{2}", DateTime.UtcNow, bytes(i), Environment.NewLine))
+Next
 
-        ''Read the append blob to the console window.
-        Console.WriteLine(appendBlob.DownloadText())
-
-    End Sub
+''Read the append blob to the console window.
+Console.WriteLine(appendBlob.DownloadText())
 
 ```
