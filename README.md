@@ -35,9 +35,14 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
 ### [저장소 계정 이용하기 - VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage)
 
-- [https://azure.microsoft.com/ko-kr/documentation/services/storage/](https://azure.microsoft.com/ko-kr/documentation/services/storage/)에서 C# 또는 다른 언어들을 이용하여 설명하고 있는 저장소 계정 사용 방법을 VB.NET 코드로 전환
+  - [https://azure.microsoft.com/ko-kr/documentation/services/storage/](https://azure.microsoft.com/ko-kr/documentation/services/storage/)에서 C# 또는 다른 언어들을 이용하여 설명하고 있는 저장소 계정 사용 방법을 VB.NET 코드로 전환
   - [.NET을 사용하여 Azure Blob 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-blobs/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-dotnet-how-to-use-blobs)
   - [Blob 스냅숏 만들기](https://azure.microsoft.com/ko-kr/documentation/articles/storage-blob-snapshots/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-blob-snapshots)
   - [.NET을 사용하여 Azure 테이블 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-tables/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-dotnet-how-to-use-tables)
+
+### [Azure SQL Database 이벤트 로그 보기 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/capturing_xevent_in_azure_sql)
+
+  - sys.event_log 
+  - sys.fn_xe_telemetry_blob_target_read_file
 
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
