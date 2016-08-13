@@ -12,5 +12,9 @@ Micorosoft Azure SQL Databases에서 제공되는 유용한 DMV 쿼리들을 제
   - sp_who2 
   - sysprocesses
   
+### [누가 접속 중인거야? (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/connection_summary)
 
+  - sys.dm_exec_sessions 
+  - sys.dm_exec_connections
+  
 **성지용([jiyongseong](https://github.com/jiyongseong))**

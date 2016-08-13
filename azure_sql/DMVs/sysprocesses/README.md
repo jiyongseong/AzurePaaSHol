@@ -4,7 +4,7 @@
 
 SQL Server 2000 시절에 많이 사용되던 시스템 개체들이 있었는데요...
 
-개인적으로는 master..sysprocesses와 sp_who2라는 시스템 저장 프로시저일 것입니다.
+개인적으로는 master..sysprocesses, sys.sysprocesses와 sp_who2라는 시스템 저장 프로시저일 것입니다.
 
 이런 전통적인 시스템 개체들도 Azure SQL Database에서 지원을 하네요.
 
@@ -13,6 +13,9 @@ exec sp_who2;
 GO
 
 SELECT * FROM sysprocesses;
+GO
+
+SELECT * FROM sys.sysprocesses;
 GO
 
 ```
