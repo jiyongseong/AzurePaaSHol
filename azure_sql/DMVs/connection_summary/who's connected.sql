@@ -1,5 +1,5 @@
 /*
-사용자 데이터베이스 컨텍스트에서만 실행이 가능함
+sys.dm_exec_connections DMV는 사용자 데이터베이스 컨텍스트에서만 실행이 가능함
 Msg 262, Level 14, State 1, Line 2
 VIEW DATABASE STATE permission denied in database 'master'.
 Msg 297, Level 16, State 1, Line 2

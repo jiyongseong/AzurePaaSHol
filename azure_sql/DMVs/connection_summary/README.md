@@ -34,6 +34,9 @@ ORDER BY COUNT(conn.session_id) DESC;
 또한 다음과 같이, 세션에 대한 정보들과 마지막으로 수행한 SQL 구문도 확인할 수 있습니다.
 아래 구문을 실행하는 세션은 반환되는 결과에서 제외됩니다(```WHERE sess.session_id <> @@spid```)
 
+위의 DMV들에 추가로, 다음의 DMF(Dynamic Management Functions)가 사용되었습니다.
+- [sys.dm_exec_sql_text](https://msdn.microsoft.com/en-us/library/ms181929.aspx)
+
 #### 세션별 연결 정보와 마지막으로 수행한 SQL 구문 반환
 ```SQL
 SELECT sess.session_id, sess.host_name, sess.program_name, 
