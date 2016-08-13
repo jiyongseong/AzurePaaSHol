@@ -1,4 +1,5 @@
 SELECT * FROM sys.event_log ORDER BY start_time desc;  
+GO
 
 SELECT  object_name 
   ,CAST(f.event_data as XML).value('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
@@ -8,5 +9,4 @@ SELECT  object_name
   ,CAST(f.event_data as XML).value('(/event/data[@name="is_success"]/value)[1]', 'bit')  AS [is_success]
 FROM sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
 ORDER BY [timestamp] DESC;
-
-
+GO
