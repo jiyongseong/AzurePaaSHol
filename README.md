@@ -1,6 +1,6 @@
-# Azure PaaS Hands on Lab
+# Azure PaaS Hands on Lab & useful codes
 
-Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 대한 Hands on Lab을 제공합니다.
+Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 대한 Hands on Lab과 유용한 코드들을 제공합니다.
 
 ### [Azure 파일 업로드 예제](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb)
 - 기본 예제는 ASP.NET MVC 기본 파일 업로드 방식으로 작성됨
@@ -40,9 +40,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
   - [Blob 스냅숏 만들기](https://azure.microsoft.com/ko-kr/documentation/articles/storage-blob-snapshots/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-blob-snapshots)
   - [.NET을 사용하여 Azure 테이블 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-tables/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-dotnet-how-to-use-tables)
 
-### [Azure SQL Database 이벤트 로그 보기 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/capturing_xevent_in_azure_sql)
-
-  - sys.event_log 
-  - sys.fn_xe_telemetry_blob_target_read_file
+### [Azure SQL Databases useful DMVs codes](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs)
+  - Micorosoft Azure SQL Databases에서 제공되는 유용한 DMV 쿼리들을 제공합니다.
 
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
