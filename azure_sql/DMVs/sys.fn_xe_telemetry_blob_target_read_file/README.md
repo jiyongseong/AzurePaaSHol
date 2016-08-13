@@ -1,5 +1,7 @@
 # Azure SQL Database 이벤트 로그 보기
 
+Database context : master database
+
 Azure SQL Database에서는 SQL Server와는 달리, [sys.event_log](https://msdn.microsoft.com/en-us/library/dn270018.aspx)라는 DMV를 이용하여 이벤트 로그를 확인할 수 있습니다.
 
 ```SQL
