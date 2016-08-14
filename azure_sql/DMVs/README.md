@@ -21,7 +21,7 @@
 
   - sys.dm_exec_requests
   - sys.dm_exec_sql_text
-  - sys.dm_exec_query_plan
+  - sys.dm_exec_query_plan  
 
   
 **성지용([jiyongseong](https://github.com/jiyongseong))**
