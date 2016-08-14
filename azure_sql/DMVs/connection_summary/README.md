@@ -25,10 +25,11 @@ ORDER BY COUNT(conn.session_id) DESC
 #### 로그인 사용자별 세션 갯수
 ```SQL
 SELECT sess.login_name,
-		COUNT(conn.session_id) AS [# of connections]
-FROM sys.dm_exec_sessions AS sess INNER JOIN sys.dm_exec_connections AS conn ON sess.session_id = conn.session_id
+		COUNT(sess.session_id) AS [# of connections]
+FROM sys.dm_exec_sessions AS sess 
+WHERE sess.session_id <> @@spid AND sess.is_user_process = 1
 GROUP BY sess.login_name
-ORDER BY COUNT(conn.session_id) DESC;
+ORDER BY COUNT(sess.session_id) DESC;
 ```
 
 또한 다음과 같이, 세션에 대한 정보들과 마지막으로 수행한 SQL 구문도 확인할 수 있습니다.

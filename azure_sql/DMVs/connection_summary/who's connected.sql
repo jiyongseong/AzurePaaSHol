@@ -14,7 +14,8 @@ ORDER BY COUNT(conn.session_id) DESC;
 
 
 SELECT sess.login_name,
-		COUNT(conn.session_id) AS [# of connections]
-FROM sys.dm_exec_sessions AS sess INNER JOIN sys.dm_exec_connections AS conn ON sess.session_id = conn.session_id
+		COUNT(sess.session_id) AS [# of connections]
+FROM sys.dm_exec_sessions AS sess 
+WHERE sess.session_id <> @@spid AND sess.is_user_process = 1
 GROUP BY sess.login_name
-ORDER BY COUNT(conn.session_id) DESC;
+ORDER BY COUNT(sess.session_id) DESC;
