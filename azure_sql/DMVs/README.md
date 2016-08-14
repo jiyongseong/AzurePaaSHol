@@ -17,9 +17,11 @@
   - sys.dm_exec_sessions 
   - sys.dm_exec_connections
 
-### [Azure SQL Databases의 실시간 모니터링 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/requests)
+### [실시간 모니터링 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/requests)
 
   - sys.dm_exec_requests
+  - sys.dm_exec_sql_text
+  - sys.dm_exec_query_plan
 
   
 **성지용([jiyongseong](https://github.com/jiyongseong))**
