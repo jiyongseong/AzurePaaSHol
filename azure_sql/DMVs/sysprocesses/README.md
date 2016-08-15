@@ -21,3 +21,18 @@ GO
 ```
 
 특이한 점은 사용자 데이터베이스에서도 sysprocesses라고만 명시를 하여도 쿼리가 가능하다는 점입니다.
+
+### 그외 (계속 찾아서 업데이트 중...)
+
+그외에도 Azure SQL Database 에서 사용할 수 있는 전통적인 시스템 개체 및 명령어들은 다음과 같습니다.
+
+- syscacheobjects
+- dbcc opentran()
+- sysobjects
+
+Azure SQL Databases에서 지원되지 않는 시스템 개체와 명령어들은 다음과 같습니다.
+
+- sp_lock : master.dbo.syslockinfo에 대한 참조 불가
+- dbcc freeproccache
+- dbcc dropcleanbuffers
+- dbcc flushprocindb()
