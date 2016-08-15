@@ -12,18 +12,18 @@
   - sp_who2 
   - sysprocesses
   
-### [누가 접속 중인거야? (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/connection_summary)
+### [누가 접속 중인거야? (T-SQL, sys.dm_exec_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/connection_summary)
 
   - sys.dm_exec_sessions 
   - sys.dm_exec_connections
 
-### [실시간 모니터링 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/requests)
+### [실시간 모니터링 (T-SQL, sys.dm_exec_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/requests)
 
   - sys.dm_exec_requests
   - sys.dm_exec_sql_text
   - sys.dm_exec_query_plan  
 
-### [쿼리 실행 계획 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/plans)
+### [도대체 누가 느린겨? (T-SQL, sys.dm_exec_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/plans)
 
   - sys.dm_exec_query_stats
   - sys.dm_exec_sql_text
