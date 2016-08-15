@@ -23,7 +23,7 @@
   - sys.dm_exec_sql_text
   - sys.dm_exec_query_plan  
 
- ### [쿼리 실행 계획 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/plans)
+### [쿼리 실행 계획 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/plans)
 
   - sys.dm_exec_query_stats
   - sys.dm_exec_sql_text
