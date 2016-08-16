@@ -23,5 +23,8 @@
   - sys.dm_exec_sql_text
   - sys.dm_exec_query_plan  
 
+### [Compatibility level 130 for Azure SQL Database V12 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/cmptlevel)
+
+  - ALTER DATABASE...SET COMPATIBILITY_LEVEL
   
 **성지용([jiyongseong](https://github.com/jiyongseong))**
