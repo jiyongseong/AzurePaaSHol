@@ -30,6 +30,7 @@ GO
 - dbcc opentran()
 - sysobjects
 - sysindexes
+- sp_spaceused
 
 Azure SQL Databases에서 지원되지 않는 시스템 개체와 명령어들은 다음과 같습니다.
 
