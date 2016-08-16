@@ -1,4 +1,4 @@
-select l.resource_type,
+SELECT l.resource_type,
 			db_name(resource_database_id) as DBName,
 			CASE WHEN l.resource_type IN ('Database', 'File', 'Metadata') THEN l.resource_type
 						WHEN l.resource_type = 'Object' THEN OBJECT_NAME(l.resource_associated_entity_id, l.resource_database_id)
@@ -6,7 +6,6 @@ select l.resource_type,
 						ELSE 'NA'
 			END AS obj_name,
 			request_mode,
-			l.resource_associated_entity_id  
-			resource_description
+			l.resource_associated_entity_id AS resource_description
 FROM sys.dm_tran_locks AS l
 WHERE l.resource_type <> 'Database';

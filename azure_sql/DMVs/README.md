@@ -33,4 +33,12 @@
   
   - ALTER DATABASE...SET COMPATIBILITY_LEVEL 
 
+### [잠금 관련 - Lock (T-SQL, sys.dm_tran_locks)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/lock)
+  
+  - sys.dm_tran_locks
+  - sys.dm_exec_connections
+  - sys.dm_exec_requests
+  - sys.dm_exec_sessions
+  - sys.dm_exec_sql_text
+
 **성지용([jiyongseong](https://github.com/jiyongseong))**
