@@ -22,3 +22,17 @@ SELECT  object_name
 FROM sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
 ORDER BY [timestamp] DESC;
 ```
+
+글을 더 합니다. sys.event_log 이외에도 sys.event_log_ex라는 DMV도 있군요.
+아직 두 DMV의 차이점을 찾지 못했습니다.
+
+```SQL
+SELECT * FROM  sys.event_log_ex;
+```
+
+다음 두 개의 DMV도 있군요..
+
+```SQL
+select * from sys.database_connection_stats;
+select * from sys.database_connection_stats_ex;
+```
