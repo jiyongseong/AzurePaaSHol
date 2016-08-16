@@ -2,7 +2,7 @@
 
 **Database context : user database**
 
-Azure SQL Databases v12에서는 호환성 레빌을 130(SQL Server 2016)로 설정할 수 있는 옵션을 제공합니다.
+Azure SQL Databases v12에서는 호환성 레벨을 130(SQL Server 2016)로 설정할 수 있는 옵션을 제공합니다.
 
 Azure SQL Databases 서버에 데이터베이스를 생성하면 기본적으로 호환성 수준은 120으로 설정이 됩니다.
 
