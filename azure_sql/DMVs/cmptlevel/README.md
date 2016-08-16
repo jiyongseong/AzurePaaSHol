@@ -27,4 +27,5 @@ GO
 관련된 설명은 다음의 문서를 참고하세요.
 
 [Compatibility level 130 for Azure SQL Database V12](https://azure.microsoft.com/en-us/updates/compatibility-level-130-for-azure-sql-database-v12/)
+
 [Improved query performance with compatibility Level 130 in Azure SQL Database](https://azure.microsoft.com/en-us/documentation/articles/sql-database-compatibility-level-query-performance-130/)
