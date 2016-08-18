@@ -13,7 +13,7 @@ ADD EVENT sqlserver.deprecation_announcement(
 ADD TARGET package0.ring_buffer(SET max_memory=(51200))
 WITH (STARTUP_STATE=OFF);
 GO
-
+ 
 ALTER EVENT SESSION deprecated_tsql ON DATABASE
 STATE = START;
 GO
