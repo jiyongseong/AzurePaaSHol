@@ -2,14 +2,14 @@
 
 Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 대한 Hands on Lab과 유용한 코드들을 제공합니다.
 
-### [Azure SQL Databases useful DMVs codes](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs)
+### [Azure SQL Databases useful DMVs codes (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs)
   - Micorosoft Azure SQL Databases에서 제공되는 유용한 DMV 쿼리들을 제공합니다.
 
 ### [Azure Function App을 이용하여 AWS S3 파일을 Storage account로 복사하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/copy-awss3-to-azure-storageaccount-using-functionapp)
 
 - Azure의 App service 중에 하나인, Function app을 이용하여 AWS S3에 있는 파일들을 Azure의 Storage account로 복사하는 방법을 설명하고 있습니다.
 
-### [Azure SQL Database DTU Calculator 사용법](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
+### [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
 
 - Azure SQL Database DTU Calculator 사용법과 흔히 겪게 되는 PowerShell 스크립트 오류 수정
 
@@ -27,10 +27,10 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 - Azure SQL Database의 데이터베이스를 같은 리소스 그룹 또는 다른 리소스 그룹으로 복사하는 방법에 대해서 설명합니다.
 - 구현은 PowerShell을 이용하여 설명하고 있습니다.
 
-### [앞으로 제거될 T-SQL 기능의 사용여부 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
+### [앞으로 제거될 T-SQL 기능의 사용여부 확인 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
   - 향후 제거될 기능에 대한 사용여부 확인 및 사용 쿼리 확인
 
-### [Azure 파일 업로드 예제](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb)
+### [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb)
 - 기본 예제는 ASP.NET MVC 기본 파일 업로드 방식으로 작성됨
   - ASP.NET MVC에서 그리드는 Grid.MVC를 활용
 - 추가 예제는 jQuery.Form을 활용한 HTML/Javascript 파일 업로드 방식으로 작성
