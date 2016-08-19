@@ -1,6 +1,6 @@
 # Azure SQL Databases useful DMVs codes
 
-설명 따위는 필요없고, 그냥 쿼리만 알고 싶다는 귀차니스트들을 위한, Micorosoft Azure SQL Databases에서 제공되는 유용한 DMV 쿼리들을 제공합니다.
+설명 따위는 필요없고, 그냥 쿼리만 알고 싶다는 귀차니스트들을 위한, Micorosoft Azure SQL Databases에서 제공되는 유용한 DMV와 쿼리들을 제공합니다.
 
 ### [Azure SQL Database 이벤트 로그 보기 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/sys.fn_xe_telemetry_blob_target_read_file)
 
