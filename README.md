@@ -39,9 +39,6 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 - Azure SQL Database의 데이터베이스를 같은 리소스 그룹 또는 다른 리소스 그룹으로 복사하는 방법에 대해서 설명합니다.
 - 구현은 PowerShell을 이용하여 설명하고 있습니다.
 
-### [앞으로 제거될 T-SQL 기능의 사용여부 확인 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
-  - 향후 제거될 기능에 대한 사용여부 확인 및 사용 쿼리 확인
-
 ### [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb) 
 by taeyo
 
