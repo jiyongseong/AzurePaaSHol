@@ -7,3 +7,5 @@
 - [.NET을 사용하여 Azure Blob 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-blobs/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-dotnet-how-to-use-blobs)
 - [Blob 스냅숏 만들기](https://azure.microsoft.com/ko-kr/documentation/articles/storage-blob-snapshots/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-blob-snapshots)
 - [.NET을 사용하여 Azure 테이블 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-tables/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/vbnet-storage/vbnet-storage-dotnet-how-to-use-tables)
+
+이미 C# 코드를 VB.NET 코드로 변환해주는 도구들이 많이 있어서, 해당 시리즈는 중단합니다.
