@@ -17,6 +17,9 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
     * [Compatibility level 130 for Azure SQL Database V12 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/cmptlevel)
     * [앞으로 제거될 T-SQL 기능의 사용여부 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
 
+  - 유용한 PowerShell 코드들
+    * [전체 Azure SQL Databases 목록 반환](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
+
 ### [Azure Function App을 이용하여 AWS S3 파일을 Storage account로 복사하기 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/copy-awss3-to-azure-storageaccount-using-functionapp)
 
 - Azure의 App service 중에 하나인, Function app을 이용하여 AWS S3에 있는 파일들을 Azure의 Storage account로 복사하는 방법을 설명하고 있습니다.
