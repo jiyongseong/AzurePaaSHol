@@ -11,6 +11,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
     * [도대체 누가 느린겨? (T-SQL, sys.dm_exec_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/plans)
     * [잠금 관련 - Lock (T-SQL, sys.dm_tran_locks)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/lock)
     * [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/size)
+    * [활성 트랜잭션 정보 (T-SQL, sys.dm_tran_*_transactions)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/tx)
  
   - 기타 유용한 T-SQL 코드들을 공유합니다. 
     * [Compatibility level 130 for Azure SQL Database V12 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/cmptlevel)
@@ -41,8 +42,9 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 ### [앞으로 제거될 T-SQL 기능의 사용여부 확인 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
   - 향후 제거될 기능에 대한 사용여부 확인 및 사용 쿼리 확인
 
-### [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb)
-- 기본 예제는 ASP.NET MVC 기본 파일 업로드 방식으로 작성됨
+### [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb) 
+by taeyo
+
   - ASP.NET MVC에서 그리드는 Grid.MVC를 활용
 - 추가 예제는 jQuery.Form을 활용한 HTML/Javascript 파일 업로드 방식으로 작성
   - 그리드는 Knockout을 활용하여 MVVM 으로 구현(Json 바인딩)
