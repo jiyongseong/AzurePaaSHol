@@ -35,6 +35,8 @@ GO
 
 먼저 다음과 같이, 확장 이벤트를 정의합니다. 이벤트는 deprecated 기능을 사용하는 시점입니다.
 
+아래에서는 확장 이벤트를 ring buffer에 저장합니다. Azure Storage에 Blob 형식으로 확장 이벤트를 저장하는 방법은 다음의 [링크](https://github.com/jiyongseong/AzurePaaSHol/tree/master/capturing_xevent_in_azure_sql)를 참고하시기 바랍니다.
+
 ```SQL
 CREATE EVENT SESSION [deprecated_tsql] ON DATABASE 
 ADD EVENT sqlserver.deprecation_announcement(

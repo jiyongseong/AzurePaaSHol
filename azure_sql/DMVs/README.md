@@ -45,4 +45,9 @@
 
   - sys.dm_io_virtual_file_stats
 
+### [활성 트랜잭션 정보 (T-SQL, sys.dm_tran_*_transactions)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/tx)
+
+  - sys.dm_tran_session_transactions
+  - sys.dm_tran_active_transactions
+
 **성지용([jiyongseong](https://github.com/jiyongseong))**
