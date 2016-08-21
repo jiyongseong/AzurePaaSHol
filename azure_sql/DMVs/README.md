@@ -50,4 +50,11 @@
   - sys.dm_tran_session_transactions
   - sys.dm_tran_active_transactions
 
+### [인덱스 정보 (T-SQL, sys.dm_db_index_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/idx)
+
+  - sys.indexes
+  - sys.dm_db_index_usage_stats
+ 
+
+
 **성지용([jiyongseong](https://github.com/jiyongseong))**
