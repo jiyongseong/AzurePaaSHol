@@ -20,7 +20,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
   - 유용한 PowerShell 코드들
     * [전체 Azure SQL Databases 목록 반환](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
-    * [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
+    * [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/howto-dtucalculator)
   
 ### [Azure Function Apps (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function)
   - Micorosoft Azure Function Apps을 이용하는 다양한 코드들을 공유합니다.
