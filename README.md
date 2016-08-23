@@ -2,7 +2,7 @@
 
 Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 대한 Hands on Lab과 유용한 코드들을 제공합니다.
 
-### [Azure SQL Databases useful PowerShells, DMVs and quries (T-SQL, PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs)
+### [Azure SQL Databases useful PowerShells, DMVs and quries (T-SQL, PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/)
   - Micorosoft Azure SQL Databases에서 제공되는 유용한 DMV 쿼리들을 제공합니다.
     * [Azure SQL Database 이벤트 로그 보기 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/sys.fn_xe_telemetry_blob_target_read_file)
     * [전통적인 시스템 개체들 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/sysprocesses)
@@ -20,14 +20,12 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
   - 유용한 PowerShell 코드들
     * [전체 Azure SQL Databases 목록 반환](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
-
-### [Azure Function App을 이용하여 AWS S3 파일을 Storage account로 복사하기 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/copy-awss3-to-azure-storageaccount-using-functionapp)
-
-- Azure의 App service 중에 하나인, Function app을 이용하여 AWS S3에 있는 파일들을 Azure의 Storage account로 복사하는 방법을 설명하고 있습니다.
-
-### [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
-
-- Azure SQL Database DTU Calculator 사용법과 흔히 겪게 되는 PowerShell 스크립트 오류 수정
+    * [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/howto-dtucalculator)
+  
+### [Azure Function Apps (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function)
+  - Micorosoft Azure Function Apps을 이용하는 다양한 코드들을 공유합니다.
+    * [Azure Function App을 이용하여 AWS S3 파일을 Storage account로 복사하기 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function/copy-awss3-to-azure-storageaccount-using-functionapp)
+      * Azure의 App service 중에 하나인, Function app을 이용하여 AWS S3에 있는 파일들을 Azure의 Storage account로 복사하는 방법을 설명하고 있습니다.
 
 ### [Extended Event를 이용하여 Azure SQL Database에서 발생된 Deadlock 정보 확인하기 (PowerShell/T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/capturing_xevent_in_azure_sql)
 

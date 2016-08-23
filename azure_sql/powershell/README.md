@@ -7,4 +7,8 @@
   - Get-AzureSqlDatabase(ASM)
   - Get-AzureRmSqlDatabase(ARM)
 
+### [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/howto-dtucalculator)
+
+  - Get-AzureAzure SQL Database DTU Calculator 사용법과 흔히 겪게 되는 PowerShell 스크립트 오류 수정
+
 **성지용([jiyongseong](https://github.com/jiyongseong))**
