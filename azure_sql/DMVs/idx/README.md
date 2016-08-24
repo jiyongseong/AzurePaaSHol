@@ -52,3 +52,37 @@ GROUP BY o.name, o.object_id, o.schema_id, i.name, i.index_id, i.type_desc, i.is
 ORDER BY o.object_id,i.index_id;
 GO
 ```
+
+다음은 인덱스별 페이지에 대한 작업 유형 횟수들을 확인하는 쿼리입니다.
+크게 leaf level과 non-leaf level에 따른 insert, update, delete 횟수와 할당량을 보여주고 있습니다.
+SQL Server의 데이터 구조에 대해서는 다음의 문서를 참고하시기 바랍니다.
+
+* [Tables and Index Data Structures Architecture](https://technet.microsoft.com/en-us/library/ms180978(v=sql.105).aspx)
+* [Indexes in SQL Server 2005/2008 – Part 2 – Internals](http://www.sqlskills.com/blogs/kimberly/indexes-in-sql-server-20052008-part-2-internals/)
+
+```SQL
+ SELECT o.name AS table_name, o.object_id, OBJECT_SCHEMA_NAME(o.object_id) AS [schema_name],
+	i.name AS index_name, i.index_id,  i.type_desc AS index_type_desc, 
+
+	--leaf level
+	s.leaf_insert_count,
+	s.leaf_delete_count,
+	s.leaf_update_count,
+	s.leaf_ghost_count,
+
+	--non leaf
+	s.nonleaf_insert_count,
+	s.nonleaf_delete_count,
+	s.nonleaf_update_count,
+
+	--allocation
+	s.leaf_allocation_count,
+	s.nonleaf_allocation_count
+
+FROM sys.objects AS o INNER JOIN sys.indexes AS i ON o.object_id = i.object_id
+		INNER JOIN sys.partitions AS p ON i.object_id = p.object_id AND i.index_id = p.index_id
+		INNER JOIN sys.dm_db_index_operational_stats(db_id(), NULL, NULL, NULL) AS s ON p.object_id = s.object_id AND p.index_id = s.index_id AND p.partition_number = s.partition_number
+WHERE o.is_ms_shipped = 0
+ORDER BY o.object_id, i.index_id;
+GO
+```
