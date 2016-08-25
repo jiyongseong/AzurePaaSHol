@@ -156,10 +156,6 @@ public class PerformanceCountersEntity : TableEntity
 
 마지막으로 해당 Azure Function이 수행될 시간을 지정하는 부분입니다. 아래의 코드에서는 UTC 기준으로 15시에 실행이 되도록 되어 있으니, KST로는 오전 0시에 실행이 되겠습니다.
 
-timer trigger의 CRON 표현식에 대해서는 다음의 링크를 참고하시기 바랍니다.
-
-[Azure Functions timer trigger](https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/)
-
 **function.json**
 ```json
 {
@@ -174,3 +170,7 @@ timer trigger의 CRON 표현식에 대해서는 다음의 링크를 참고하시
   "disabled": false
 }
 ```
+
+timer trigger의 CRON 표현식에 대해서는 다음의 링크를 참고하시기 바랍니다.
+
+[Azure Functions timer trigger](https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/)
