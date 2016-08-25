@@ -10,6 +10,7 @@
 - [sys.index_columns](https://msdn.microsoft.com/en-us/library/ms175105.aspx)
 - [sys.columns](https://msdn.microsoft.com/en-us/library/ms176106.aspx)
 - [sys.types](https://msdn.microsoft.com/en-us/library/ms188021.aspx)
+- [sys.dm_db_index_operational_stats](https://msdn.microsoft.com/en-us/library/ms174281.aspx)
 
 기본적인 인덱스 정보(스키마 이름, 테이블 이름, 인덱스 아이디, 인덱스 이름, 인덱스 유형)와 간략한 사용 패턴(seek, scan, lookup, update)에 대한 정보는 다음의 쿼리를 이용하여 확인이 가능합니다.
 
@@ -84,5 +85,26 @@ FROM sys.objects AS o INNER JOIN sys.indexes AS i ON o.object_id = i.object_id
 		INNER JOIN sys.dm_db_index_operational_stats(db_id(), NULL, NULL, NULL) AS s ON p.object_id = s.object_id AND p.index_id = s.index_id AND p.partition_number = s.partition_number
 WHERE o.is_ms_shipped = 0
 ORDER BY o.object_id, i.index_id;
+GO
+```
+
+다음의 DMV 쿼리는 row, page 단위의 잠금과 latch 정보들을 반환합니다.
+
+```SQL
+SELECT SCHEMA_NAME(o.schema_id) AS [schema_name],  o.name AS [object_name], 
+ 	i.name AS index_name, o.object_id, i.index_id, i.type_desc AS index_type_desc,
+
+	--row & page lock
+	s.partition_number, s.row_lock_count, s.row_lock_wait_count, s.row_lock_wait_in_ms, 
+	s.page_lock_count, s.page_lock_wait_count, s.page_lock_wait_in_ms,
+
+	--latch
+	s.page_latch_wait_count, s.page_latch_wait_in_ms, s.page_io_latch_wait_count, s.page_io_latch_wait_in_ms,
+	s.tree_page_latch_wait_count, s.tree_page_latch_wait_in_ms, s.tree_page_io_latch_wait_count, s.tree_page_io_latch_wait_in_ms
+
+FROM sys.objects AS o INNER JOIN sys.indexes AS i ON o.object_id = i.object_id
+										INNER JOIN sys.dm_db_index_operational_stats(DB_ID(), NULL, NULL, NULL) AS s ON i.object_id = s.object_id AND i.index_id = s.index_id
+WHERE o.is_ms_shipped = 0
+ORDER BY OBJECT_NAME(o.object_id), i.index_id;
 GO
 ```

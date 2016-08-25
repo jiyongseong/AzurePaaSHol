@@ -61,7 +61,7 @@ string connectionString = "DefaultEndpointsProtocol=https;AccountName=<<Storage 
 
 필요에 따라서, 날짜를 변경하여 사용하시면 됩니다.
 
-string startTicks = "0" + DateTime.UtcNow.AddDays(-7).Date.Ticks.ToString();
+string startTicks = "0" + DateTime.UtcNow.AddDays(**-7**).Date.Ticks.ToString();
 
 **run.csx**
 ```C#
