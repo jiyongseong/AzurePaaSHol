@@ -24,9 +24,9 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
   
 ### [Azure Function Apps (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function)
   - Micorosoft Azure Function Apps을 이용하는 다양한 코드들을 공유합니다.
-    * [Azure Function App을 이용하여 AWS S3 파일을 Storage account로 복사하기 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function/copy-awss3-to-azure-storageaccount-using-functionapp)
+    * [AWS S3 파일을 Storage account로 복사하기 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function/copy-awss3-to-azure-storageaccount-using-functionapp)
       * Azure의 App service 중에 하나인, Function app을 이용하여 AWS S3에 있는 파일들을 Azure의 Storage account로 복사하는 방법을 설명하고 있습니다.
-    * [Azure Function App을 이용하여 WAD(Windows Azure Diagnostics) 성능 데이터 정리하기 - Windows 인스턴스 버전 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function/purging_wad_windows_using_azure_function)
+    * [WAD(Windows Azure Diagnostics) 성능 데이터 정리하기 - Windows 인스턴스 버전 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function/purging_wad_windows_using_azure_function)
       * Azure Function을 이용하여 특정 기간이 지난 WAD 성능 정보 삭제 자동화
 
 ### [Extended Event를 이용하여 Azure SQL Database에서 발생된 Deadlock 정보 확인하기 (PowerShell/T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/capturing_xevent_in_azure_sql)
