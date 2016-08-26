@@ -1,4 +1,4 @@
- # 인덱스(index) 정보
+# 인덱스(index) 정보
 
 **Database context : user database**
 
