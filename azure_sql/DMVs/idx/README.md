@@ -11,6 +11,7 @@
 - [sys.columns](https://msdn.microsoft.com/en-us/library/ms176106.aspx)
 - [sys.types](https://msdn.microsoft.com/en-us/library/ms188021.aspx)
 - [sys.dm_db_index_operational_stats](https://msdn.microsoft.com/en-us/library/ms174281.aspx)
+- [sys.dm_db_index_physical_stats](https://msdn.microsoft.com/en-us/library/ms188917.aspx)
 
 기본적인 인덱스 정보(스키마 이름, 테이블 이름, 인덱스 아이디, 인덱스 이름, 인덱스 유형)와 간략한 사용 패턴(seek, scan, lookup, update)에 대한 정보는 다음의 쿼리를 이용하여 확인이 가능합니다.
 
@@ -106,5 +107,20 @@ FROM sys.objects AS o INNER JOIN sys.indexes AS i ON o.object_id = i.object_id
 										INNER JOIN sys.dm_db_index_operational_stats(DB_ID(), NULL, NULL, NULL) AS s ON i.object_id = s.object_id AND i.index_id = s.index_id
 WHERE o.is_ms_shipped = 0
 ORDER BY OBJECT_NAME(o.object_id), i.index_id;
+GO
+```
+
+다음은 인덱스 관리 시에 가장 많이 이슈가 되는 인덱스 조각화 정보를 확인하는 DMV 쿼리입니다.
+
+```SQL
+SELECT  OBJECT_SCHEMA_NAME(o.object_id) AS [schema_name],  o.name AS [object_name], 
+ 				i.name AS index_name, o.object_id, i.index_id, i.type_desc AS index_type_desc, 
+				s.partition_number, s.alloc_unit_type_desc, s.index_depth, s.index_level,
+				s.avg_fragmentation_in_percent, s.fragment_count,
+				s.avg_fragment_size_in_pages, s.page_count				
+FROM sys.objects AS o INNER JOIN sys.indexes AS i ON o.object_id = i.object_id
+						INNER JOIN sys.dm_db_index_physical_stats(DB_ID(), NULL, NULL, NULL, 'LIMITED') AS s ON i.object_id = s.object_id AND i.index_id = s.index_id
+WHERE o.is_ms_shipped = 0
+ORDER BY s.avg_fragmentation_in_percent DESC , s.page_count DESC;
 GO
 ```
