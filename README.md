@@ -34,10 +34,6 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 - Azure SQL Database에서 확장 이벤트를 이용하여, deadlock 정보를 Storage account에 저장하는 방법과 저장된 데이터를 확인하는 과정에 대해서 설명합니다.
 - 예제를 실행하기 위해서는, Azure PowerShell SDK와 SQL Server Management Studio가 필요합니다.
 
-### [Azure Resource Group 간에 Resource 옮기기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/moving-resources-between-azure-resource-groups)
-
-- Azure PowerShell을 이용하여, 특정 Resource Group에 있는 모든 리소스들을 다른 Resource Group으로 이동시키는 방법을 설명하고 있습니다.
-
 ### [Azure SQL Database 복사하기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/copy-azure-sql-db-to-another-rg)
 
 - Azure SQL Database의 데이터베이스를 같은 리소스 그룹 또는 다른 리소스 그룹으로 복사하는 방법에 대해서 설명합니다.
