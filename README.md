@@ -33,7 +33,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
 ### [Azure Storage Account (C#/VB.NET)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account)
   - Micorosoft Azure Storage Account를 이용하는 다양한 코드들을 공유합니다.
-    * [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/AzureFileUploadWeb) by taeyo
+    * [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/AzureFileUploadWeb) by taeyo
       * ASP.NET MVC에서 그리드는 Grid.MVC를 활용
       * 추가 예제는 jQuery.Form을 활용한 HTML/Javascript 파일 업로드 방식으로 작성
         * 그리드는 Knockout을 활용하여 MVVM 으로 구현(Json 바인딩)
