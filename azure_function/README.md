@@ -1,6 +1,6 @@
 # Azure Function Apps useful resources
 
-Micorosoft Azure SQL Databases와 관련된 유용한 정보와 쿼리/코드들을 제공합니다.
+Micorosoft Azure Function App으로 구현된 유용한 정보와 쿼리/코드들을 제공합니다.
 
 ### [Azure Function Apps (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function)
 
