@@ -17,6 +17,9 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
   - 기타 유용한 T-SQL 코드들을 공유합니다. 
     * [Compatibility level 130 for Azure SQL Database V12 (T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/cmptlevel)
     * [앞으로 제거될 T-SQL 기능의 사용여부 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
+    * [Extended Event를 이용하여 Azure SQL Database에서 발생된 Deadlock 정보 확인하기 (PowerShell/T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/capturing_xevent_in_azure_sql)
+      - Azure SQL Database에서 확장 이벤트를 이용하여, deadlock 정보를 Storage account에 저장하는 방법과 저장된 데이터를 확인하는 과정에 대해서 설명합니다.
+      - 예제를 실행하기 위해서는, Azure PowerShell SDK와 SQL Server Management Studio가 필요합니다.
 
   - 유용한 PowerShell 코드들
     * [전체 Azure SQL Databases 목록 반환](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
@@ -45,11 +48,5 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
         * [.NET을 사용하여 Azure Blob 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-blobs/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/vbnet-storage/vbnet-storage-dotnet-how-to-use-blobs)
         * [Blob 스냅숏 만들기](https://azure.microsoft.com/ko-kr/documentation/articles/storage-blob-snapshots/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/vbnet-storage/vbnet-storage-blob-snapshots)
         * [.NET을 사용하여 Azure 테이블 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-tables/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/vbnet-storage/vbnet-storage-dotnet-how-to-use-tables)
-            
-### [Extended Event를 이용하여 Azure SQL Database에서 발생된 Deadlock 정보 확인하기 (PowerShell/T-SQL)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/capturing_xevent_in_azure_sql)
-
-- Azure SQL Database에서 확장 이벤트를 이용하여, deadlock 정보를 Storage account에 저장하는 방법과 저장된 데이터를 확인하는 과정에 대해서 설명합니다.
-- 예제를 실행하기 위해서는, Azure PowerShell SDK와 SQL Server Management Studio가 필요합니다.
-
-### 
+ 
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
