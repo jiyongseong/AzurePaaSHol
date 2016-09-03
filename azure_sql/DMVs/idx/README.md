@@ -124,3 +124,12 @@ WHERE o.is_ms_shipped = 0
 ORDER BY s.avg_fragmentation_in_percent DESC , s.page_count DESC;
 GO
 ```
+
+Azure SQL Database에서는 SQL Server 2000에서 지원되던 시스템 개체들도 사용이 가능합니다.
+
+단, 아래의 두 쿼리 모두 동일한 결과를 반환하며, 사용자 데이터베이스는 물론이고 master 데이터베이스에서도 실행이 가능합니다.
+
+```SQL
+SELECT * FROM sysindexes;
+SELECT * FROM sys.sysindexes;
+```

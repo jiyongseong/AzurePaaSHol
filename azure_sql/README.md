@@ -21,7 +21,7 @@ Micorosoft Azure SQL Databases와 관련된 유용한 정보와 쿼리/코드들
     * [앞으로 제거될 T-SQL 기능의 사용여부 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/deprecated)
 
   - 유용한 PowerShell 코드들
-    * [전체 Azure SQL Databases 목록 반환](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
+    * [전체 Azure SQL Databases 목록 반환 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
     * [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/howto-dtucalculator)
     * [Azure SQL Database 복사하기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/copy-azure-sql-db-to-another-rg)
 
