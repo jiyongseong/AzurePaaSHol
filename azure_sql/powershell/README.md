@@ -11,4 +11,8 @@
 
   - Get-AzureAzure SQL Database DTU Calculator 사용법과 흔히 겪게 되는 PowerShell 스크립트 오류 수정
 
+### [Azure SQL Database 복사하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/copy-azure-sql-db-to-another-rg)
+
+  - Azure SQL Database의 데이터베이스를 같은 리소스 그룹 또는 다른 리소스 그룹으로 복사하는 방법에 대해서 설명합니다.
+
 **성지용([jiyongseong](https://github.com/jiyongseong))**
