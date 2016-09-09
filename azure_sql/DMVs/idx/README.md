@@ -12,6 +12,7 @@
 - [sys.types](https://msdn.microsoft.com/en-us/library/ms188021.aspx)
 - [sys.dm_db_index_operational_stats](https://msdn.microsoft.com/en-us/library/ms174281.aspx)
 - [sys.dm_db_index_physical_stats](https://msdn.microsoft.com/en-us/library/ms188917.aspx)
+- [sys.dm_db_partition_stats](https://msdn.microsoft.com/en-us/library/ms187737.aspx)
 
 기본적인 인덱스 정보(스키마 이름, 테이블 이름, 인덱스 아이디, 인덱스 이름, 인덱스 유형)와 간략한 사용 패턴(seek, scan, lookup, update)에 대한 정보는 다음의 쿼리를 이용하여 확인이 가능합니다.
 
@@ -132,4 +133,16 @@ Azure SQL Database에서는 SQL Server 2000에서 지원되던 시스템 개체�
 ```SQL
 SELECT * FROM sysindexes;
 SELECT * FROM sys.sysindexes;
+```
+
+다음의 쿼리는 테이블의 인덱스별로 데이터의 행수를 반환합니다.
+
+```SQL
+SELECT OBJECT_SCHEMA_NAME(o.object_id)  AS [schema_name], OBJECT_NAME(o.object_id) AS table_name, i.index_id, i.type_desc, SUM(s.row_count) AS row_count
+FROM sys.objects AS o INNER JOIN sys.indexes AS i on o.object_id = i.object_id
+			INNER JOIN sys.dm_db_partition_stats AS s on i.object_id = s.object_id AND i.index_id = s.index_id
+WHERE o.is_ms_shipped = 0
+GROUP BY o.object_id, i.index_id, i.type_desc
+ORDER BY o.object_id, i.index_id;
+GO
 ```
