@@ -33,7 +33,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
   - 유용한 PowerShell 코드들
     * [전체 Azure SQL Databases 목록 반환 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/list_all_sql_db)
-    
+
     * [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/howto-dtucalculator)
 
     * [Azure SQL Database 복사하기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/copy-azure-sql-db-to-another-rg)
