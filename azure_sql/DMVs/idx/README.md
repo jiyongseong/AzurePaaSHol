@@ -146,3 +146,17 @@ GROUP BY o.object_id, i.index_id, i.type_desc
 ORDER BY o.object_id, i.index_id;
 GO
 ```
+
+인덱스가 얼마나, 어떻게 사용되었는지는 다음과 같이 확인이 가능합니다. 인덱스가 유용성 여부는 물론이고, 인덱스가 어떤 유형의 연산자 형태로 사용되었는지 확인이 가능합니다.
+
+```sql
+SELECT OBJECT_SCHEMA_NAME(object_id) AS [schema_name], OBJECT_NAME(object_id) AS [table_name], index_id, 
+	SUM(user_seeks + user_scans + user_lookups) AS ReadsOps,
+	SUM(user_updates) AS WritesOps,
+	CAST(SUM(user_seeks + user_scans + user_lookups) AS decimal) /NULLIF(SUM(user_updates + user_seeks + user_scans + user_lookups), 0) * 100 AS ReadsRatio,
+	CAST(SUM(user_updates) AS decimal) /NULLIF(SUM(user_updates + user_seeks + user_scans + user_lookups), 0) * 100 AS WritesRatio
+FROM sys.dm_db_index_usage_stats
+GROUP BY object_id, index_id
+ORDER BY object_id, index_id;
+GO
+```
