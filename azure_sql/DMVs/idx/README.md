@@ -13,6 +13,9 @@
 - [sys.dm_db_index_operational_stats](https://msdn.microsoft.com/en-us/library/ms174281.aspx)
 - [sys.dm_db_index_physical_stats](https://msdn.microsoft.com/en-us/library/ms188917.aspx)
 - [sys.dm_db_partition_stats](https://msdn.microsoft.com/en-us/library/ms187737.aspx)
+- [sys.dm_db_missing_index_groups](https://msdn.microsoft.com/en-us/library/ms345407.aspx)
+- [sys.dm_db_missing_index_group_stats](https://msdn.microsoft.com/en-us/library/ms345421.aspx)
+- [sys.dm_db_missing_index_details](https://msdn.microsoft.com/en-us/library/ms345434.aspx)
 
 기본적인 인덱스 정보(스키마 이름, 테이블 이름, 인덱스 아이디, 인덱스 이름, 인덱스 유형)와 간략한 사용 패턴(seek, scan, lookup, update)에 대한 정보는 다음의 쿼리를 이용하여 확인이 가능합니다.
 
@@ -159,4 +162,24 @@ WHERE o.is_ms_shipped = 0
 GROUP BY o.object_id, i.index_id, i.type_desc
 ORDER BY o.object_id, i.index_id;
 GO
+```
+
+데이터베이스에 요청되는 쿼리를 기준으로 생성이 필요한 인덱스와 인덱스 생성 구문을 반환하는 쿼리는 다음과 같습니다.
+
+```SQL
+SELECT 
+  migs.avg_total_user_cost * (migs.avg_user_impact / 100.0) * (migs.user_seeks + migs.user_scans) AS improvement_measure, 
+  'CREATE INDEX [missing_index_' + CONVERT (varchar, mig.index_group_handle) + '_' + CONVERT (varchar, mid.index_handle) 
+  + '_' + LEFT (PARSENAME(mid.statement, 1), 32) + ']'
+  + ' ON ' + mid.statement 
+  + ' (' + ISNULL (mid.equality_columns,'') 
+    + CASE WHEN mid.equality_columns IS NOT NULL AND mid.inequality_columns IS NOT NULL THEN ',' ELSE '' END 
+    + ISNULL (mid.inequality_columns, '')
+  + ')' 
+  + ISNULL (' INCLUDE (' + mid.included_columns + ')', '') AS create_index_statement, 
+  migs.*, mid.database_id, mid.[object_id]
+FROM sys.dm_db_missing_index_groups mig INNER JOIN sys.dm_db_missing_index_group_stats migs ON migs.group_handle = mig.index_group_handle
+					INNER JOIN sys.dm_db_missing_index_details mid ON mig.index_handle = mid.index_handle
+WHERE migs.avg_total_user_cost * (migs.avg_user_impact / 100.0) * (migs.user_seeks + migs.user_scans) > 10
+ORDER BY migs.avg_total_user_cost * migs.avg_user_impact * (migs.user_seeks + migs.user_scans) DESC;
 ```
