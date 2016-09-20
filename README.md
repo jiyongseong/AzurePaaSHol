@@ -64,7 +64,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
         * [.NET을 사용하여 Azure 테이블 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-tables/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/vbnet-storage/vbnet-storage-dotnet-how-to-use-tables)
 
 ### Azure Cloud Services (PowerShell)
-  - Cloud services의 instance 상세 정보 확인
+  - [Cloud services의 instance 상세 정보 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/instance_detilas)
   - Cloud services의 Guest OS family 확인
  
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
