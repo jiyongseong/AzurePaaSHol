@@ -65,6 +65,6 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
 
 ### Azure Cloud Services (PowerShell)
   - [Cloud services의 instance 상세 정보 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/instance_detilas)
-  - Cloud services의 Guest OS family 확인
+  - [Cloud services의 Guest OS family 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/Checking_Guest_OS_family)
  
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
