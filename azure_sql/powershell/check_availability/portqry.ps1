@@ -2,7 +2,7 @@
 $duration = 0
 $sleep = 10
 $outputfile = "C:\temp\portquery\log.txt"
-$dbServerName = "smonsterdb.database.windows.net"
+$dbServerName = "<<your db server name>>.database.windows.net"
 
 $end = if ($duration -eq 0) {"9999-12-31 23:59:59"} else {(Get-Date).AddSeconds($duration)}
 
