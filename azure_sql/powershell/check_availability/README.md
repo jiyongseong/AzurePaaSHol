@@ -57,7 +57,7 @@ while((Get-Date) -ile $end)
 
 매개 변수 값을 변경한 이후에 실행을 하면, 다음의 그림과 같이 화면에 최신 모니터링 정보가 표시되며, 
 
-![](https://jyseongfileshare.blob.core.windows.net/images/portqry-02.png)
+![](https://jyseongfileshare.blob.core.windows.net/images/portqry-04.png)
 
 지정된 경로에는 해당 내용이 파일로 저장됩니다.
 
@@ -123,3 +123,8 @@ while((Get-Date) -ile $end)
 }
 
 ```
+
+다음과 같은 화면으로 보여집니다.
+
+
+![](https://jyseongfileshare.blob.core.windows.net/images/portqry-05.png)
