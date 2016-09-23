@@ -62,3 +62,11 @@ while((Get-Date) -ile $end)
 지정된 경로에는 해당 내용이 파일로 저장됩니다.
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/portqry-03.png)
+
+PortQry에 대한 자세한 설명은 다음의 자료를 참고하시기 바랍니다.
+
+[Description of the Portqry.exe command-line utility ](https://support.microsoft.com/en-us/kb/310099)
+
+PortQry는 UI 도구로도 제공이 되고 있습니다.
+
+[PortQryUI - User Interface for the PortQry Command Line Port Scanner](https://www.microsoft.com/en-us/download/details.aspx?id=24009)
