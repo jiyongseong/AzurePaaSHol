@@ -1,4 +1,4 @@
-# Azure SQL Databases 연결 모니터링하기
+# PortQry를 이용한 Azure SQL Databases 연결 모니터링하기
 
 종종, Azure SQL Databases 서버에 대한 연결이 단절 여부를 모니터링 하는 경우가 있습니다.
 
