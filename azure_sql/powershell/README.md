@@ -16,6 +16,7 @@
   - Azure SQL Database의 데이터베이스를 같은 리소스 그룹 또는 다른 리소스 그룹으로 복사하는 방법에 대해서 설명합니다.
 
 ### [PowerShell을 이용하여 원격으로 Azure SQL Databases에 쿼리하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/invoking_sql_using_ps)
+### [Azure SQL Databases 연결 모니터링하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/check_availability)
 
 
 **성지용([jiyongseong](https://github.com/jiyongseong))**
