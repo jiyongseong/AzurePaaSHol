@@ -53,12 +53,12 @@ while((Get-Date) -ile $end)
 * $duration : 모니터링 하려는 시간을 초단위로 입력합니다. 0으로 입력하는 경우에는 무한대로 실행이 되며, 사용자가 직접 중지 버튼을 누르거나 Ctrl+C를 눌러서 종료해주어야 합니다.
 * $sleep : portqry를 실행 주기를 초 단위로 지정합니다. 10이라고 명시하면, 10초 단위로 portqry 명령을 실행합니다.
 * $outputfile : 실행 결과를 저장할 파일과 경로를 입력합니다.
-* $dbServerName : Azure SQL Database 서버의 이름을 입력합니다.
+* $dbServerName : __your db server name__.database.windows.net 형식으로 Azure SQL Database 서버의 이름을 입력합니다.
 
 매개 변수 값을 변경한 이후에 실행을 하면, 다음의 그림과 같이 화면에 최신 모니터링 정보가 표시되며, 
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/portqry-02.png)
 
-지정된 경로에는 해당 내용이 파일로 저장이 됩니다.
+지정된 경로에는 해당 내용이 파일로 저장됩니다.
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/portqry-03.png)
