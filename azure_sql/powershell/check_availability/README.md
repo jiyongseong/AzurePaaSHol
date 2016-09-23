@@ -57,7 +57,7 @@ while((Get-Date) -ile $end)
 
 매개 변수 값을 변경한 이후에 실행을 하면, 다음의 그림과 같이 화면에 최신 모니터링 정보가 표시되며, 
 
-![](https://jyseongfileshare.blob.core.windows.net/images/portqry-04.png)
+![](https://jyseongfileshare.blob.core.windows.net/images/portqry-02.png)
 
 지정된 경로에는 해당 내용이 파일로 저장됩니다.
 
@@ -70,3 +70,56 @@ PortQry에 대한 자세한 설명은 다음의 자료를 참고하시기 바랍
 PortQry는 UI 도구로도 제공이 되고 있습니다.
 
 [PortQryUI - User Interface for the PortQry Command Line Port Scanner](https://www.microsoft.com/en-us/download/details.aspx?id=24009)
+
+#### Code 추가
+
+PowerShell 창으로 모니터링을 하는 경우, 약간의 시각화 부분을 추가하였습니다.
+
+```PowerShell
+$location = "C:\temp\portquery"
+$duration = 0
+$sleep = 10
+$outputfile = "C:\temp\portquery\log.txt"
+$dbServerName = "<<your db server name>>.database.windows.net"
+
+$end = if ($duration -eq 0) {"9999-12-31 23:59:59"} else {(Get-Date).AddSeconds($duration)}
+
+Set-Location -Path $location
+
+
+function Write-PortQryResult([string] $result)
+{
+    $regexPattern = "LISTENING"
+    $index = 0
+    $regexPattern = "(?i)$regexPattern" 
+    $regex = New-Object System.Text.RegularExpressions.Regex $regexPattern
+
+    $match = $regex.Match($result, $index)
+    if($match.Success -and $match.Length -gt 0)
+	{
+        Write-Host ""
+		Write-Host $match.Value.ToString() -ForegroundColor DarkGreen -BackgroundColor Yellow 
+	}
+	else
+	{
+        Write-Host ""
+		Write-Host "Something is wrong!!!!!" -ForegroundColor Red -BackgroundColor Yellow
+	}
+
+}
+
+while((Get-Date) -ile $end)
+{
+    $content1 = Get-Date -Format "yyyy-MM-dd HH:mm:ss" 
+    $content2 = cmd /c PortQry.exe -n $dbServerName -p tcp -e 1433 
+
+    Clear-Host
+    Write-Host -Object $content1 -BackgroundColor Gray
+    $content2
+    Write-PortQryResult $content2 
+    $content1 + $content2 | Out-File -FilePath $outputfile -Append
+
+    Start-Sleep -Seconds $sleep
+}
+
+```
