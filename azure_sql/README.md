@@ -25,5 +25,6 @@ Micorosoft Azure SQL Databases와 관련된 유용한 정보와 쿼리/코드들
     * [Azure SQL Database DTU Calculator 사용법 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/howto-dtucalculator)
     * [Azure SQL Database 복사하기 (PowerShell)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/copy-azure-sql-db-to-another-rg)
     * [PowerShell을 이용하여 원격으로 Azure SQL Databases에 쿼리하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/invoking_sql_using_ps)
+    * [PortQry를 이용한 Azure SQL Databases 연결 모니터링하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/check_availability)
 
 **성지용([jiyongseong](https://github.com/jiyongseong))**

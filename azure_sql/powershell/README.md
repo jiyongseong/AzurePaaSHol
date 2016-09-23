@@ -17,6 +17,6 @@
 
 ### [PowerShell을 이용하여 원격으로 Azure SQL Databases에 쿼리하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/invoking_sql_using_ps)
 ### [PortQry를 이용한 Azure SQL Databases 연결 모니터링하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/powershell/check_availability)
-
+- PortQry를 이용하여 Azure SQL Databases 서버의 연결 상태를 모니터링, 로그 파일로 기록하는 방법을 설명합니다.
 
 **성지용([jiyongseong](https://github.com/jiyongseong))**
