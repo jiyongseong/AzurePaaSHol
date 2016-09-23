@@ -27,7 +27,7 @@ ORDER BY [timestamp] DESC;
 아직 두 DMV의 차이점을 찾지 못했습니다.
 
 ```SQL
-SELECT * FROM  sys.event_log_ex;
+SELECT * FROM sys.event_log_ex;
 ```
 
 다음 두 개의 DMV도 있군요..
