@@ -36,3 +36,18 @@ SELECT * FROM  sys.event_log_ex;
 select * from sys.database_connection_stats;
 select * from sys.database_connection_stats_ex;
 ```
+
+다음의 쿼리를 이용하면 해당 서버에서 발생된 오류만 반환을 하게 됩니다. 또한 해당 오류에 대한 오류 메시지도 같이 확인할 수 있습니다.
+
+```sql
+SELECT e.* ,m.severity ,m.[description]
+FROM
+(SELECT  object_name 
+  ,CAST(f.event_data as XML).value('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
+  ,CAST(f.event_data as XML).value ('(/event/@timestamp)[1]', 'datetime2') AS [timestamp]
+  ,CAST(f.event_data as XML).value('(/event/data[@name="error"]/value)[1]', 'int') AS [error]
+  ,CAST(f.event_data as XML).value('(/event/data[@name="state"]/value)[1]', 'int') AS [state]
+  ,CAST(f.event_data as XML).value('(/event/data[@name="is_success"]/value)[1]', 'bit')  AS [is_success]
+FROM sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f ) AS e INNER JOIN sys.sysmessages AS m ON e.error = m.error
+ORDER BY [timestamp] DESC;
+```
