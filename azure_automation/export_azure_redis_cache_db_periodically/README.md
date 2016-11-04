@@ -224,7 +224,35 @@ Export-AzureRmRedisCache -ResourceGroupName $resourceGroupName -Name $redisServe
 
 정상적인 테스트가 완료되면, 다음과 같이 성공되었다는 표시가 보여지고,
 
-![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_25.png)
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_26.png)
 
 Redis Cache database의 export된 파일이 보여집니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_32.png)
+
+이전 blade로 넘어와서, 상단에 있는 "Publish" 버튼을 클릭합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_27.png)
+
+### Azure Automation Runbook에 일정 추가
+
+이제는 주기적으로 실행하기 위한 일정을 추가합니다.
+
+Runbook 화면에서, "Schedules" > "Add a schedule"을 클릭합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_28.png)
+
+아래와 같은 순서대로 메뉴를 선택합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_29.png)
+
+원하는 이름과 요구 사항에 맞는 일정을 지정합니다.
+
+아래에서는 한국시간으로 2016년 11월 4일 오후 2시부터(종료 날짜 없음), 1시간마다 한번씩 실행되는 것으로 설정을 하였습니다. 
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_30.png)
+
+차례로 OK 버튼을 눌러서 추가합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_31.png)
 
