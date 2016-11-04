@@ -31,7 +31,7 @@ RDB를 Export한 파일을 저장할 Storage Account가 필요합니다. 해당 
 
 Storage account에서 다음과 같이 백업용 컨테이너를 만듭니다.
 
-![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_19.png)
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_33.png)
 
 해당 컨테이너에서 오른쪽 마우스를 클릭하고, "Get Shared Access Signature"를 선택합니다.
 
