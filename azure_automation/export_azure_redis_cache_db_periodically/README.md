@@ -97,3 +97,34 @@ PowerShell command line 도구나 PowerShell ISE를 열고, 위의 스크립트�
 
 ### Azure Redis Cache Module 등록
 
+Azure Portal로 돌아와서, 다음의 그림과 같이 Azure Automation Account의 Assets 버튼을 클릭합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_07.png)
+
+다음에는 Module을 선택합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_08.png)
+
+메뉴 상단의 "Add a module"을 클릭합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_09.png)
+
+우측에 있는 파일철 아이콘을 클릭하고,
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_10.png)
+
+AzureRM.profile.zip을 선택하고, OK 버튼을 클릭합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_11.png)
+
+OK 버튼을 클릭하면, 파일이 업로드되고 설치되기 시작합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_12.png)
+
+AzureRM.Profile의 상태가 Available이 되기까지 기다립니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_13.png)
+
+상기와 같은 상태가 되면, AzureRM.RedisCache.zip 파일을 같은 과정으로 업로드 및 설치합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_14.png)
