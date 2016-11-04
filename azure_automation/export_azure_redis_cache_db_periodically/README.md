@@ -173,4 +173,58 @@ Azure Automation 메인 화면으로 돌아와서, Runbook 메뉴를 선택합�
 
 여기에 다음의 스크립트들을 추가합니다.
 
+```PowerShell
+$connectionName = "AzureRunAsConnection"
+try
+{
+    # Get the connection "AzureRunAsConnection "
+    $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
+
+    "Logging in to Azure..."
+    Add-AzureRmAccount `
+        -ServicePrincipal `
+        -TenantId $servicePrincipalConnection.TenantId `
+        -ApplicationId $servicePrincipalConnection.ApplicationId `
+        -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
+}
+catch {
+    if (!$servicePrincipalConnection)
+    {
+        $ErrorMessage = "Connection $connectionName not found."
+        throw $ErrorMessage
+    } else{
+        Write-Error -Message $_.Exception
+        throw $_.Exception
+    }
+}
+
+$resourceGroupName = "your resource group name"
+$redisServerName = "redis cache server name"
+$prefix = (Get-Date -Format yyyyMMddhhmm).ToString()
+$container = "SAS string"
+
+Export-AzureRmRedisCache -ResourceGroupName $resourceGroupName -Name $redisServerName -Prefix $prefix -Container $container
+```
+
+다음의 항목들을 수정해주어야 합니다.
+
+* $subscriptionName = "your subscription name" : 여러 분의 구독 명칭
+* $resourceGroupName = "your resource group name" : 리소스 그룹 이름
+* $redisServerName = "redis cache server name" : Azure Redis Server 이름(전체가 아닌 prefix 명칭)
+* $prefix = (Get-Date -Format yyyyMMddhhmm).ToString() : export되는 파일의 이름 
+* $container = "SAS string" : 앞서 생성한 SAS 문자열 전체
+
+수정이 완료되면, 상단의 "Test Pane"을 선택합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_24.png)
+
+"Test Pane"의 상단에 있는 "Start" 버튼을 클릭하여 테스트를 실행합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_25.png)
+
+정상적인 테스트가 완료되면, 다음과 같이 성공되었다는 표시가 보여지고,
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_25.png)
+
+Redis Cache database의 export된 파일이 보여집니다.
 
