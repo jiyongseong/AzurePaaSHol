@@ -1,6 +1,6 @@
 # Azure Automation을 이용하여 Azure Redis Cache 데이터베이스를 주기적으로 export하기 
 
-Azure Redis Cache는 RDB를 주기적으로 백업할 수 있는 기능을 제공합니다. 
+Azure Redis Cache는 RDB(Redis Cache Database)를 주기적으로 백업할 수 있는 기능을 제공합니다. 
 
 해당 기능을 이용하면, 가장 최근의 RDB 데이터를 이용하여 RDB를 복원할 수 있습니다. 자세한 내용은 다음의 링크를 참고하시기 바랍니다.
 
