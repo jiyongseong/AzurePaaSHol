@@ -23,6 +23,28 @@ Azure Redis Cache의 Export 기능은 UI를 통해서도 가능하고, Azure Pow
 RDB를 Export한 파일을 저장할 Storage Account가 필요합니다. 해당 Storage Account는 Azure Redis Cache 서버가 위치한 것과 동일한 Region에 생성하거나, 생성된 Storage Account가 있어야 합니다.
 
 
+### 백업 컨테이너 및 SAS 작성하기
+
+먼저, Export한 Azure Redis Cache RDB를 저장할 컨테이너를 만들게 됩니다.
+
+[Microsoft zure Storage Explorer](http://storageexplorer.com/)를 열고, 해당 계정을 추가합니다.
+
+Storage account에서 다음과 같이 백업용 컨테이너를 만듭니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_19.png)
+
+해당 컨테이너에서 오른쪽 마우스를 클릭하고, "Get Shared Access Signature"를 선택합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_20.png)
+
+다음과 같이 설정하고, "Create" 버튼을 클릭합니다. 시작 및 종료 일자는 상황에 맞게 조정합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_21.png)
+
+URL 부분은 복사하여, 잘 저장해두시기 바랍니다. Azure Automation의 Runbook 스크립트(아직은 이것이 무엇인지 몰라도 됩니다)에서 사용하게 됩니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_22.png)
+
 ### Azure Automation 계정 생성
 
 먼저, Azure Automation 계정을 생성합니다.
@@ -128,3 +150,27 @@ AzureRM.Profile의 상태가 Available이 되기까지 기다립니다.
 상기와 같은 상태가 되면, AzureRM.RedisCache.zip 파일을 같은 과정으로 업로드 및 설치합니다.
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_14.png)
+
+### Azure Automation Runbook 만들기
+
+이제 실제 수행될 PowerShell 스크립트를 작성해보도록 하겠습니다.
+
+Azure Automation 메인 화면으로 돌아와서, Runbook 메뉴를 선택합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_15.png)
+
+상단의 "Add a runbook"을 선택합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_16.png)
+
+"Quick Create" 메뉴를 선택하고, 다음과 같이 이름을 기술하고, Runbook type은 "PowerShell"을 선택하고, "Create" 버튼을 클릭합니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_17.png)
+
+생성이 완료되면, 다음과 같이 PowerShell 스크립트를 입력할 수 있는 찾이 보여집니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_18.png)
+
+여기에 다음의 스크립트들을 추가합니다.
+
+
