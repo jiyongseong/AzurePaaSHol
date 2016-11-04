@@ -256,3 +256,4 @@ Runbook 화면에서, "Schedules" > "Add a schedule"을 클릭합니다.
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_31.png)
 
+이제 주기적으로 Azure Redis Cache의 RDB가 Storage Account에 export 되어 집니다.
