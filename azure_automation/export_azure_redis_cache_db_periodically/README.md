@@ -47,6 +47,8 @@ Azure Automation Account가 생성되면, Azure Portal에서는 다음과 같은
 
 ### Azure Redis Cache Module 준비
 
+___해당 작업은 여러 분의 로컬 PC에서 수행해야 합니다.___
+
 Azure Redis Cache의 RDB는 Azure PowerShell을 이용하여 Export하게 됩니다.
 
 Azure Automation은 기본적은 PowerShell module들을 자동으로 Assets에 추가하지만, Azure Redis Cache module은 포함되지 않습니다.
@@ -55,4 +57,43 @@ Azure Automation은 기본적은 PowerShell module들을 자동으로 Assets에 
 
 먼저, Azure Redis Cache PowerShell module을 다운로드 하여야 합니다.
 
- 
+Azure PowerShell module을 다운로드 하는 방법은 다음의 링크에서 잘 설명하고 있습니다.
+
+[Azure Automation: Script for downloading and preparing AzureRM modules for Azure Automation!](http://blog.coretech.dk/jgs/azure-automation-script-for-downloading-and-preparing-azurerm-modules-for-azure-automation/)
+
+여기서는 Azure Redis Cache module만 사용할 것이기 때문에, 상기 URL의 PowerShell 스크립트를 다음과 같이 수정합니다.
+
+```PowerShell
+$folder = "C:\azurePS"
+
+Find-Module -Name AzureRM.RedisCache | Save-Module -force -Path $folder
+
+$dirs = dir $folder -Directory
+
+$dirs | Foreach {
+    $source = $_.FullName
+    $destination = "$($_.FullName).zip"
+    
+    If(Test-path $destination) {Remove-item $destination}
+    
+    Add-Type -assembly "system.io.compression.filesystem"
+    [io.compression.zipfile]::CreateFromDirectory($Source, $destination,[System.IO.Compression.CompressionLevel]::Optimal,$true) 
+}
+```
+
+PowerShell command line 도구나 PowerShell ISE를 열고, 위의 스크립트를 복사하여 붙여 넣기하고 실행합니다.
+
+실행 전에, C:\azurePS 경로가 없다면, 해당 폴더를 생성합니다.
+
+스크립트를 실행하면, 다음과 같이 관련 모듈들을 다운로드 하게 됩니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_05.png)
+
+실행이 완료되면, C:\azurePS 경로는 다음과 같이 보여지게 됩니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/export_azure_redis_cache_db_periodically_06.png)
+
+지정한, AzureRM.RedisCache module외에도, AzureRM.profile module도 같이 다운로드 된 것을 볼 수 있습니다. AzureRM.RedisCache module이 AzureRM.profile module에 의존도를 가지기 때문입니다.
+
+### Azure Redis Cache Module 등록
+
