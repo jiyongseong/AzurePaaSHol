@@ -51,9 +51,10 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
     * [WAD(Windows Azure Diagnostics) 성능 데이터 정리하기 - Windows 인스턴스 버전 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_function/purging_wad_windows_using_azure_function)
       * Azure Function을 이용하여 특정 기간이 지난 WAD 성능 정보 삭제 자동화
 
-### Azure Automation 
+### [Azure Automation](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_automation)
 
-  * [Azure Automation을 이용하여 Azure Redis Cache 데이터베이스를 주기적으로 export하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_automation/export_azure_redis_cache_db_periodically)
+  - Micorosoft Azure Automation을 이용하는 다양한 코드들을 공유합니다.
+      * [Azure Automation을 이용하여 Azure Redis Cache 데이터베이스를 주기적으로 export하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_automation/export_azure_redis_cache_db_periodically)
 
 ### [Azure Storage Account (C#/VB.NET)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account)
   - Micorosoft Azure Storage Account를 이용하는 다양한 코드들을 공유합니다.
