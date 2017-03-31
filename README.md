@@ -16,7 +16,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
     
     * [잠금 관련 - Lock (T-SQL, sys.dm_tran_locks)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/lock)
     
-    * [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/size)
+    * [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/db_size)
     
     * [활성 트랜잭션 정보 (T-SQL, sys.dm_tran_*_transactions)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/tx)
     

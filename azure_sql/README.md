@@ -11,7 +11,7 @@ Micorosoft Azure SQL Databases와 관련된 유용한 정보와 쿼리/코드들
     * [실시간 모니터링 (T-SQL, sys.dm_exec_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/requests)
     * [도대체 누가 느린겨? (T-SQL, sys.dm_exec_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/plans)
     * [잠금 관련 - Lock (T-SQL, sys.dm_tran_locks)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/lock)
-    * [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/size)
+    * [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/db_size)
     * [활성 트랜잭션 정보 (T-SQL, sys.dm_tran_*_transactions)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/tx)
     * [인덱스 정보 (T-SQL, sys.dm_db_index_*)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/idx)
     

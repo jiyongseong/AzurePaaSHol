@@ -41,7 +41,7 @@
   - sys.dm_exec_sessions
   - sys.dm_exec_sql_text
 
-### [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/size)
+### [Azure SQL Database 데이터/로그 파일 사용 패턴 (T-SQL, sys.dm_io_virtual_file_stats)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_sql/DMVs/db_size)
 
   - sys.dm_io_virtual_file_stats
 
