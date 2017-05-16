@@ -100,6 +100,45 @@ $failoverGroup = $primarySQLServer | Add-AzureRmSqlDatabaseToFailoverGroup -Fail
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_03.png)
 
-Failover Group에 데이터베이스들이 추가되면, Secondary Server(West US)에 다음과 같이 데이터베이스가 자동으로 생성됩니다.
+Failover Group에 데이터베이스들이 추가되면, Secondary Server(West US)에 다음과 같이 데이터베이스들(MyDB1, MyDB2)가 자동으로 생성됩니다.
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_04.png)
+
+## Primary Server 확인하기
+
+nslookup으로 Failover Group의 주소를 확인하면 다음과 같습니다.
+
+East US에 생성한 데이터베이스 서버(Primary Server, jyseongeastus.database.winddows.net)가 보여지는 것을 알 수 있습니다.
+
+```command
+nslookup "jyseongsqlfg.database.windows.net"
+```
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_05.png)
+
+## Failover하기
+이제 다음의 명령을 이용하여 Secondary Server로 Failover를 해보도록 하겠습니다.
+
+```powershell
+Switch-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $resourceGroup2 -ServerName $secondaryServer -FailoverGroupName $failoverGroupName -AllowDataLoss
+```
+
+## Failover 이후 Primary Server 확인하기
+
+다시 nslookup을 이용하여 Failover Group의 주소를 확인해보겠습니다.
+
+다음의 명령을 이용하여 캐시에 저장된 주소 정보를 제가하고
+
+```command
+ipconfig /flushdns
+```
+
+nslookup으로 확인을 해보시기 바랍니다.
+
+```command
+nslookup "jyseongsqlfg.database.windows.net"
+```
+
+Failover 이후에는 다음과 같이 Primary Server가 West US로 변경된 것을 확인할 수 있습니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_06.png)
