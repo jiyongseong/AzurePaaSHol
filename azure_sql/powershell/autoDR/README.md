@@ -142,3 +142,15 @@ nslookup "jyseongsqlfg.database.windows.net"
 Failover 이후에는 다음과 같이 Primary Server가 West US로 변경된 것을 확인할 수 있습니다.
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_06.png)
+
+## 주의
+
+아직은 Public Preview인 관계로 로그인 시에 Failover Group 이름으로는 서버 이름을 사용할 수 없는 상태입니다. 따라서, SQL Server Management Studio나 Connection String에서 로그인 계정에 서버 이름은 Active 서버의 명칭을 기술해주어야 합니다.
+
+즉, East US가 Active(Primary)인 경우,
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_07.png)
+
+West US가 Active(Primary)인 경우,
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_08.png)

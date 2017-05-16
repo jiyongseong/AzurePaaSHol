@@ -51,3 +51,6 @@ Switch-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $resourceGroup2 -Serve
 ##Failover 이후 Primary Server 확인하기
 ipconfig /flushdns
 nslookup "jyseongsqlfg.database.windows.net"
+
+##failback
+Switch-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $resourceGroup1 -ServerName $primaryServer -FailoverGroupName $failoverGroupName -AllowDataLoss
