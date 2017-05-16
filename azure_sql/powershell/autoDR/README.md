@@ -61,7 +61,9 @@ $primaryDB = New-AzureRmSqlDatabase -ResourceGroupName $resourceGroup1 -ServerNa
 
 ```
 
+지금까지 작성된 리소스들은 포털에서 다음과 같이 보여지게 됩니다.
 
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_01.png)
 
 ## Azure SQL Database Server 생성하기 (Secondary Server)
 
@@ -73,3 +75,31 @@ $secondaryServer = "jyseongwestus"
 New-AzureRmSqlServer -ResourceGroupName $resourceGroup2 -ServerName $secondaryServer -Location $location2 -ServerVersion "12.0" -SqlAdministratorCredentials $cred
 ```
 
+Secondary Server에는 데이터베이스를 생성하지 않습니다. Priamry와 Secondary Server를 Failover Group으로 묶고, Primary Server의 데이터베이스를 Failover Group에 추가하면 자동으로 Secondary Server에도 복제가 이루어지게 됩니다.
+
+West US에 생성한 Resource Group은 다음과 같이 보여지게 됩니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_02.png)
+
+## Failover Group 생성하기
+
+이제 다음의 cmdlet을 이용하여 failover group을 생성합니다.
+
+```powershell
+$failoverGroupName = "jyseongsqlfg"
+New-AzureRMSqlDatabaseFailoverGroup -ResourceGroupName $resourceGroup1 -ServerName $primaryServer -PartnerResourceGroupName $resourceGroup2 -PartnerServerName $secondaryServer -FailoverGroupName $failoverGroupName -FailoverPolicy Manual
+```
+
+## Failover Group에 데이터베이스 추가하기
+생성된 Failover Group에 Primary Server에 있는 데이터베이스들(MyDB1, MyDB2)을 추가합니다.
+
+```powershell
+$primarySQLServer = Get-AzureRmSqlServer -ResourceGroupName $resourceGroup1 -ServerName $primaryServer
+$failoverGroup = $primarySQLServer | Add-AzureRmSqlDatabaseToFailoverGroup -FailoverGroupName $failoverGroupName -Database ($primarySQLServer | Get-AzureRmSqlDatabase)
+```
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_03.png)
+
+Failover Group에 데이터베이스들이 추가되면, Secondary Server(West US)에 다음과 같이 데이터베이스가 자동으로 생성됩니다.
+
+![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_04.png)
