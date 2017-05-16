@@ -154,3 +154,13 @@ Failover 이후에는 다음과 같이 Primary Server가 West US로 변경된 �
 West US가 Active(Primary)인 경우,
 
 ![](https://jyseongfileshare.blob.core.windows.net/images/azure_sql_auto_dr_08.png)
+
+## 관련 PowerShell cmdlets
+
+[New-​Azure​Rm​Sql​Database​Failover​Group](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/New-AzureRmSqlDatabaseFailoverGroup?view=azurermps-4.0.0)
+
+[Add-​Azure​Rm​Sql​Database​To​Failover​Group](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/add-azurermsqldatabasetofailovergroup?view=azurermps-4.0.0)
+
+[Switch-​Azure​Rm​Sql​Database​Failover​Group](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/switch-azurermsqldatabasefailovergroup?view=azurermps-4.0.0)
+
+[Get-​Azure​Rm​Sql​Database​Failover​Group](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/get-azurermsqldatabasefailovergroup?view=azurermps-4.0.0)
