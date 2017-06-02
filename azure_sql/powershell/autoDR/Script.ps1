@@ -54,3 +54,10 @@ nslookup "jyseongsqlfg.database.windows.net"
 
 ##failback
 Switch-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $resourceGroup1 -ServerName $primaryServer -FailoverGroupName $failoverGroupName -AllowDataLoss
+
+##정리
+Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $resourceGroup1 -ServerName $primaryServer -FailoverGroupName $failoverGroupName
+Remove-AzureRmSqlServer -ResourceGroupName $resourceGroup1 -ServerName $primaryServer -Force
+Remove-AzureRmSqlServer -ResourceGroupName $resourceGroup2 -ServerName $secondaryServer -Force
+Remove-AzureRmResourceGroup -Name $resourceGroup1 -Force
+Remove-AzureRmResourceGroup -Name $resourceGroup2 -Force
