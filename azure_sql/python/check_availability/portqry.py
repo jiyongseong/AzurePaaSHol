@@ -11,6 +11,6 @@ while True:
         print (str(strftime("%Y-%m-%d %H:%M:%S", gmtime())) + " '" + host + "' is listening on " + str(port) + ".")
         s.close()
     except socket.error as e:
-        print ("Error occured ({0}): {1}".format(e.errno, e.strerror))
+        print (str(strftime("%Y-%m-%d %H:%M:%S", gmtime())) + " Error occured ({0}): {1}".format(e.errno, e.strerror))
 
     sleep(sec)
