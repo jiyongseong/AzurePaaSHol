@@ -16,7 +16,7 @@ while ($true)
         }
         else
         {
-            Write-Host ([string]::Format("{0}    Connected. but, '{1}' is not listening on {2}.", (Get-Date -Format "yyyy-MM-dd HH:mm:ss").ToString(), $dbServerName, $port))
+            Write-Host ([string]::Format("{0}    '{1}' is not listening on {2}.", (Get-Date -Format "yyyy-MM-dd HH:mm:ss").ToString(), $dbServerName, $port))
         }
     }
     catch
