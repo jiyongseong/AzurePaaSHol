@@ -56,6 +56,13 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
   - Micorosoft Azure Automation을 이용하는 다양한 코드들을 공유합니다.
       * [Azure Automation을 이용하여 Azure Redis Cache 데이터베이스를 주기적으로 export하기](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_automation/export_azure_redis_cache_db_periodically)
 
+### Azure Cloud Services (PowerShell)
+  - [Cloud services의 instance 상세 정보 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/instance_detilas)
+  - [Cloud services의 Guest OS family 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/Checking_Guest_OS_family)
+
+### Azure Application Gateway (PowerShell)
+  - [JSON 형식의 로그를 CSV 형식으로 변환](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_application_gateway)
+
 ### [Azure Storage Account (C#/VB.NET)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account)
   - Micorosoft Azure Storage Account를 이용하는 다양한 코드들을 공유합니다.
     * [Azure 파일 업로드 예제 (C#)](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/AzureFileUploadWeb) by taeyo
@@ -72,10 +79,7 @@ Micorosoft Azure에서 제공되는 PaaS(Platform as a Service) 서비스들에 
         * [Blob 스냅숏 만들기](https://azure.microsoft.com/ko-kr/documentation/articles/storage-blob-snapshots/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/vbnet-storage/vbnet-storage-blob-snapshots)
         * [.NET을 사용하여 Azure 테이블 저장소 시작](https://azure.microsoft.com/ko-kr/documentation/articles/storage-dotnet-how-to-use-tables/)의 [VB.NET 버전](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_storage_account/vbnet-storage/vbnet-storage-dotnet-how-to-use-tables)
 
-### Azure Cloud Services (PowerShell)
-  - [Cloud services의 instance 상세 정보 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/instance_detilas)
-  - [Cloud services의 Guest OS family 확인](https://github.com/jiyongseong/AzurePaaSHol/tree/master/azure_cloud_services/Checking_Guest_OS_family)
- 
+
 
 
 **김태영([taeyo](https://github.com/taeyo)), 성지용([jiyongseong](https://github.com/jiyongseong))**
