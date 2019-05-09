@@ -7,7 +7,7 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.Translation;
 
-namespace ConsoleApp_Translator
+namespace ConsoleApp_SpeechTranslator
 {
     class Program
     {
