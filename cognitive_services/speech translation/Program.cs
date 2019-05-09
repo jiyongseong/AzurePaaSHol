@@ -115,6 +115,5 @@ namespace ConsoleApp_SpeechTranslator
                 }
             }
         }
-
     }
 }
