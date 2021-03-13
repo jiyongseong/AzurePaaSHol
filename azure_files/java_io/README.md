@@ -31,5 +31,5 @@ Azure Files(Large file shares)|ByteBuffer transferFrom  | 2,811
 Azure Files(Large file shares)|Files.Copy| 1,523 
 Azure Files(Large file shares)|ProcessBuilder| 33 
 
-![](.\images\result@20210313.png)
-![](.\images\result@20210313_2.bmp)
+<img src=".\images\result@20210313.png">
+<img src=".\images\result@20210313_2.bmp">
