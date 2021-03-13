@@ -16,9 +16,9 @@ public class AzureFilesCopy {
     private static int bufferSize = 8192; 
 
     public static void main(String[] args) {
-            int testNum = 8;
-            System.out.println("Start"); 
-            long startTime = System.currentTimeMillis();
+        int testNum = 8;
+        System.out.println("Start"); 
+        long startTime = System.currentTimeMillis();
         try {
             switch (testNum)
             {

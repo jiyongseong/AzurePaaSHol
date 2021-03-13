@@ -25,6 +25,7 @@
     - Tier: Transaction Optimized
     - Large file share enabled
 - 321MB 파일 복사
+- OpenJDK 1.8
 
 
 ## 결과
@@ -63,9 +64,9 @@ public class AzureFilesCopy {
     private static int bufferSize = 8192;
 
     public static void main(String[] args) {
-            int testNum = 8;
-            System.out.println("Start"); 
-            long startTime = System.currentTimeMillis();
+        int testNum = 8;
+        System.out.println("Start"); 
+        long startTime = System.currentTimeMillis();
         try {
             switch (testNum)
             {

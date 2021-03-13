@@ -1,0 +1,19 @@
+//Usage by Solution (hourly)
+Usage
+| where TimeGenerated > startofday(ago(1d))
+| where IsBillable == true 
+| summarize TotalVolumeGB = sum(Quantity) / 1000 by bin(TimeGenerated, 1h), Solution
+| render timechart;
+
+Usage
+| where TimeGenerated > startofday(ago(1d))
+| where IsBillable == true  
+| summarize TotalVolumeGB = sum(Quantity) / 1000 by  bin(TimeGenerated, 1h), Solution
+| render columnchart;
+
+//Usage by Data Type (hourly)
+Usage
+| where TimeGenerated > startofday(ago(1d))
+| where IsBillable == true 
+| summarize TotalVolumeGB = sum(Quantity) / 1000 by bin(TimeGenerated, 1h), DataType
+| render timechart;
