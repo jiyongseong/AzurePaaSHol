@@ -1,6 +1,6 @@
 # Java IO class performance comparison - Azure Files
 
-Reference : https://killsia.tistory.com/entry/IO-vs-NIO-performance-compare-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90
+참조 : https://killsia.tistory.com/entry/IO-vs-NIO-performance-compare-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90
 
 ## 비교 IO class
 - FileStream + BufferStream
@@ -44,7 +44,7 @@ Azure Files(Large file shares)|ProcessBuilder| 33
 
 
 ## 테스트 코드
-```Java
+```java
 package AzureFilesCopy;
 
 import java.io.*;
@@ -59,7 +59,7 @@ import java.nio.file.Files;
 public class AzureFilesCopy {
 
     private static File srcFile = new File("C:\\temp\\eclipse.zip");
-    private static File desFile = new File("Z:\\small\\des.zip");
+    private static File desFile = new File("Z:\\small\\eclipse.zip");
     private static int bufferSize = 8192;
 
     public static void main(String[] args) {
