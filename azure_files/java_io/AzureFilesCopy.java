@@ -1,5 +1,5 @@
 package AzureFilesCopy;
-//reference : https://killsia.tistory.com/entry/IO-vs-NIO-performance-compare-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90
+
 import java.io.*;
 import java.io.File;
 
@@ -11,10 +11,8 @@ import java.nio.file.Files;
 
 public class AzureFilesCopy {
 
-    private static File srcFile = new File("C:\\temp\\eclipse.zip");  
-     //private static File desFile = new File("C:\\tmp\\des.zip");  
+    private static File srcFile = new File("C:\\temp\\eclipse.zip");
     private static File desFile = new File("Z:\\small\\des.zip");  
-     //private static File desFile = new File("Y:\\large\\des.zip");  
     private static int bufferSize = 8192; 
 
     public static void main(String[] args) {
@@ -103,7 +101,8 @@ public class AzureFilesCopy {
 
         fos.close();  
         fis.close();  
-    }  
+    }
+
     public static void mapBuffer() throws Exception {  
         System.out.println("mapBuffer"); 
         FileInputStream fis = new FileInputStream(srcFile);  
@@ -117,7 +116,8 @@ public class AzureFilesCopy {
 
         fos.close();  
         fis.close();  
-    }  
+    }
+    
     public static void channel() throws Exception {  
         System.out.println("channel"); 
         FileInputStream fis = new FileInputStream(srcFile);  
