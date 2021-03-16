@@ -1,6 +1,7 @@
 # Log Analytics
 
 ## Kusto Query Language - Doc
+- [microsoft/Kusto-Query-Language](https://github.com/microsoft/Kusto-Query-Language)
 - [Kusto query langueage](https://docs.microsoft.com/azure/data-explorer/kusto/concepts/)
 - [Kusto.Explorer](https://docs.microsoft.com/azure/data-explorer/kusto/tools/kusto-explorer)
 - [Kusto CLI](https://docs.microsoft.com/azure/data-explorer/kusto/tools/kusto-cli)
